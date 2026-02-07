@@ -8,11 +8,18 @@ import {
    DropdownMenu,
    Flex,
    IconButton,
-   Link,
    Text,
 } from "@radix-ui/themes";
 import Image from "next/image";
 import { useState } from "react";
+
+declare global {
+   interface Window {
+      FundraiseUp: {
+         openCheckout: (campaignId: string, options?: object) => void;
+      };
+   }
+}
 
 export function Header() {
    return (
@@ -67,32 +74,29 @@ const DesktopHeader = () => (
             <Text size={{ initial: "3", sm: "6" }}>{label}</Text>
          </HeaderButton>
       ))}
-      <Button
-         asChild
-         color="lime"
-         variant="surface"
-         radius="full"
-         style={{
-            padding: "18px",
-            cursor: "pointer",
-            fontFamily: "var(--font-coming-soon)",
-         }}
-      >
-         <Link
-            href="https://gofund.me/026af392f"
-            target="_blank"
-            rel="noopener noreferrer"
-            underline="none"
-         >
-            <Text
-               size={{ initial: "3", sm: "6" }}
-               style={{ color: "var(--lime-12)" }}
-            >
-               Donate
-            </Text>
-         </Link>
-      </Button>
+      <DonateButton />
    </Flex>
+);
+
+const DonateButton = () => (
+   <Button
+      color="lime"
+      variant="surface"
+      radius="full"
+      style={{
+         padding: "18px",
+         cursor: "pointer",
+         fontFamily: "var(--font-coming-soon)",
+      }}
+      onClick={() => window.FundraiseUp?.openCheckout("FUNNKVNBSJL")}
+   >
+      <Text
+         size={{ initial: "3", sm: "6" }}
+         style={{ color: "var(--lime-12)" }}
+      >
+         Donate
+      </Text>
+   </Button>
 );
 
 const MobileHeader = () => (
@@ -133,6 +137,9 @@ const MobileHeader = () => (
                   </Text>
                </DropdownMenu.Item>
             ))}
+            <DropdownMenu.Item>
+               <DonateButton />
+            </DropdownMenu.Item>
          </DropdownMenu.Content>
       </DropdownMenu.Root>
    </Flex>

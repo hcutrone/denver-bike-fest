@@ -3,7 +3,9 @@ import { Coming_Soon } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { Flex, Text, Theme } from "@radix-ui/themes";
+import { headers } from "next/headers";
 import Image from "next/image";
+import { Footer, Header } from "./components";
 
 const comingSoon = Coming_Soon({
    weight: "400",
@@ -58,7 +60,13 @@ export const metadata: Metadata = {
    },
 };
 
-export default function RootLayout() {
+export default async function RootLayout({
+   children,
+}: {
+   children: React.ReactNode;
+}) {
+   const headerStore = await headers();
+   const showSite = headerStore.get("x-show-site") === "true";
    return (
       <html lang="en" className={comingSoon.variable}>
          <body className={`${comingSoon.className} antialiased`}>
@@ -68,9 +76,17 @@ export default function RootLayout() {
                accentColor="lime"
             >
                <div style={{ backgroundColor: "var(--lime-1)" }}>
-                  <main>
-                     <ComingSoon />
-                  </main>
+                  {showSite ? (
+                     <>
+                        <Header />
+                        <main>{children}</main>
+                        <Footer />
+                     </>
+                  ) : (
+                     <main>
+                        <ComingSoon />
+                     </main>
+                  )}
                </div>
             </Theme>
          </body>

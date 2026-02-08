@@ -1,3 +1,5 @@
-# Denver Bike Calendar
+# Denver Bike Fest
 
-A calendar designed to be the one-stop-shop for all things bikes in Denver!
+A website for all things Denver Bike Fest!
+
+https://denverbikefest.app

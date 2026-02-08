@@ -3,19 +3,16 @@
 import {
    Box,
    Button,
-   Card,
    Flex,
    Heading,
-   Inset,
    Text,
    TextArea,
    TextField,
 } from "@radix-ui/themes";
 import Image from "next/image";
 import { Label } from "radix-ui";
-import { CollapsiblePartnerGrid } from "../components/client/partners-grid";
-import { EmailForm } from "../components/email-form";
-import { partners } from "../partner-data";
+import { CollapsiblePartnerGrid, EmailForm } from "@/components";
+import { partners } from "../../partner-data";
 
 export default function PartnersPage() {
    return (
@@ -183,45 +180,3 @@ export default function PartnersPage() {
       </Flex>
    );
 }
-
-export const PartnerCard = ({
-   group,
-}: {
-   group: { name: string; logo: string };
-}) => (
-   <Card
-      style={{
-         minWidth: "150px",
-         maxWidth: "150px",
-         backgroundColor: "var(--lime-4)",
-         textAlign: "center",
-         paddingBottom: "4px",
-      }}
-   >
-      <Flex gap="8px" direction="column" align="center" height="100%">
-         <Inset pb="current" clip="padding-box">
-            <Image
-               src={group.logo}
-               alt={group.name}
-               width={150}
-               height={150}
-               style={{
-                  backgroundColor: "var(--lime-3)",
-                  minHeight: "150px",
-                  objectFit: "contain",
-               }}
-            />
-         </Inset>
-         <Text
-            my="auto"
-            size="4"
-            style={{
-               color: "var(--lime-12)",
-               fontFamily: "var(--font-coming-soon)",
-            }}
-         >
-            {group.name}
-         </Text>
-      </Flex>
-   </Card>
-);

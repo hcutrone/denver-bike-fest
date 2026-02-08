@@ -1,6 +1,6 @@
-import { Button, Flex, Link, Text } from "@radix-ui/themes";
+import { Button, Card, Flex, Inset, Link, Text } from "@radix-ui/themes";
+import Image from "next/image";
 import { featuredPartners } from "../partner-data";
-import { PartnerCard } from "../partners/page";
 
 export function Partners() {
    return (
@@ -106,3 +106,45 @@ export function Partners() {
       </Flex>
    );
 }
+
+export const PartnerCard = ({
+   group,
+}: {
+   group: { name: string; logo: string };
+}) => (
+   <Card
+      style={{
+         minWidth: "150px",
+         maxWidth: "150px",
+         backgroundColor: "var(--lime-4)",
+         textAlign: "center",
+         paddingBottom: "4px",
+      }}
+   >
+      <Flex gap="8px" direction="column" align="center" height="100%">
+         <Inset pb="current" clip="padding-box">
+            <Image
+               src={group.logo}
+               alt={group.name}
+               width={150}
+               height={150}
+               style={{
+                  backgroundColor: "var(--lime-3)",
+                  minHeight: "150px",
+                  objectFit: "contain",
+               }}
+            />
+         </Inset>
+         <Text
+            my="auto"
+            size="4"
+            style={{
+               color: "var(--lime-12)",
+               fontFamily: "var(--font-coming-soon)",
+            }}
+         >
+            {group.name}
+         </Text>
+      </Flex>
+   </Card>
+);

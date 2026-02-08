@@ -132,7 +132,7 @@ function ComingSoon() {
          }}
       >
          <Image
-            src="/bikes.jpeg"
+            src="/landing.jpeg"
             alt="Landing"
             fill
             style={{ objectFit: "cover", opacity: 0.5 }}
@@ -153,7 +153,12 @@ function ComingSoon() {
                textAlign: "center",
             }}
          >
-            <Image src="/bikefest.png" alt="Logo" width={500} height={500} />
+            <Image
+               src="/logo_vertical.png"
+               alt="Logo"
+               width={500}
+               height={500}
+            />
             <HighlightedText>
                2026 Date & Location announcement coming soon!
             </HighlightedText>

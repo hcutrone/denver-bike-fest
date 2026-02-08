@@ -28,7 +28,7 @@ function LandingImage() {
          }}
       >
          <Image
-            src="/bikes.jpeg"
+            src="/landing.jpeg"
             alt="Landing"
             fill
             style={{ objectFit: "cover", opacity: 0.5 }}
@@ -50,7 +50,7 @@ function LandingImage() {
             }}
          >
             <Image
-               src="/bikefest.png"
+               src="/logo_vertical.png"
                alt="Denver Bike Fest Logo"
                width={500}
                height={500}

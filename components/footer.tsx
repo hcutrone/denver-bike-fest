@@ -78,7 +78,7 @@ export function Footer() {
             </Flex>
             <Separator size="3" style={{ backgroundColor: "var(--lime-7)" }} />
             <Image
-               src="/bikefest.png"
+               src="/logo_vertical.png"
                alt="Logo"
                width={200}
                height={200}

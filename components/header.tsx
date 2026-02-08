@@ -67,7 +67,12 @@ const DesktopHeader = () => (
          onClick={() => scrollToSection("")}
          style={{ cursor: "pointer", background: "transparent" }}
       >
-         <Image src="/bikefest.png" alt="Logo" width={75} height={75} />
+         <Image
+            src="/logo_horizontal_no_year.png"
+            alt="Logo"
+            width={200}
+            height={75}
+         />
       </Button>
       {HeaderButtons.map(({ label, id }) => (
          <HeaderButton key={id} onClick={() => scrollToSection(id)}>
@@ -105,7 +110,12 @@ const MobileHeader = () => (
          onClick={() => scrollToSection("")}
          style={{ cursor: "pointer", background: "transparent" }}
       >
-         <Image src="/bikefest.png" alt="Logo" width={75} height={75} />
+         <Image
+            src="/logo_horizontal_no_year.png"
+            alt="Logo"
+            width={75}
+            height={75}
+         />
       </Button>
       <DropdownMenu.Root>
          <DropdownMenu.Trigger>

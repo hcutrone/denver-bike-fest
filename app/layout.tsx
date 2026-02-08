@@ -7,122 +7,128 @@ import { Flex, Text, Theme } from "@radix-ui/themes";
 import Image from "next/image";
 
 const comingSoon = Coming_Soon({
-	weight: "400",
-	variable: "--font-coming-soon",
-	subsets: ["latin"],
-	display: "swap",
+   weight: "400",
+   variable: "--font-coming-soon",
+   subsets: ["latin"],
+   display: "swap",
 });
 
 export const metadata: Metadata = {
-	title: "Denver Bike Fest",
-	description:
-		"Denver Bike Fest 2026 - The ultimate celebration of Denver's bicycle community",
-	keywords: [
-		"Denver",
-		"Bike Fest",
-		"Denver Bike Fest",
-		"Biking",
-		"Bicycle",
-		"Bike",
-		"Community",
-		"Events",
-		"Cycling",
-	],
-	authors: [
-		{ name: "Harrison Cutrone", url: "https://instagram.com/harrisoncutrone" },
-		{ name: "Emily Klienfelter", url: "https://instagram.com/bike.this.city" },
-	],
-	creator: "Harrison Cutrone",
-	robots: {
-		index: true,
-		follow: true,
-	},
-	openGraph: {
-		title: "Denver Bike Fest",
-		description: "Join us for the Denver Bike Fest!",
-		url: "https://denverbikefest.app",
-		siteName: "Denver Bike Fest",
-		images: [
-			{
-				url: "/logo.png",
-				alt: "Denver Bike Fest Logo",
-			},
-		],
-		type: "website",
-		locale: "en_US",
-	},
+   title: "Denver Bike Fest",
+   description:
+      "Denver Bike Fest 2026 - The ultimate celebration of Denver's bicycle community",
+   keywords: [
+      "Denver",
+      "Bike Fest",
+      "Denver Bike Fest",
+      "Biking",
+      "Bicycle",
+      "Bike",
+      "Community",
+      "Events",
+      "Cycling",
+   ],
+   authors: [
+      {
+         name: "Harrison Cutrone",
+         url: "https://instagram.com/harrisoncutrone",
+      },
+      {
+         name: "Emily Klienfelter",
+         url: "https://instagram.com/bike.this.city",
+      },
+   ],
+   creator: "Harrison Cutrone",
+   robots: {
+      index: true,
+      follow: true,
+   },
+   openGraph: {
+      title: "Denver Bike Fest",
+      description: "Join us for the Denver Bike Fest!",
+      url: "https://denverbikefest.app",
+      siteName: "Denver Bike Fest",
+      images: [
+         {
+            url: "/logo.png",
+            alt: "Denver Bike Fest Logo",
+         },
+      ],
+      type: "website",
+      locale: "en_US",
+   },
 };
 
 export default function RootLayout() {
-	return (
-		<html lang="en" className={comingSoon.variable}>
-			<body className={`${comingSoon.className} antialiased`}>
-				<Theme
-					appearance="light"
-					style={{ fontFamily: "var(--font-coming-soon)" }}
-					accentColor="lime"
-				>
-					<div style={{ backgroundColor: "var(--lime-1)" }}>
-						<ComingSoon />
-					</div>
-				</Theme>
-			</body>
-		</html>
-	);
+   return (
+      <html lang="en" className={comingSoon.variable}>
+         <body className={`${comingSoon.className} antialiased`}>
+            <Theme
+               appearance="light"
+               style={{ fontFamily: "var(--font-coming-soon)" }}
+               accentColor="lime"
+            >
+               <div style={{ backgroundColor: "var(--lime-1)" }}>
+                  <ComingSoon />
+               </div>
+            </Theme>
+         </body>
+      </html>
+   );
 }
 
 function ComingSoon() {
-	return (
-		<Flex
-			style={{
-				height: "100vh",
-				justifyContent: "center",
-				alignItems: "center",
-				position: "relative",
-			}}
-		>
-			<Image
-				src="/bikes.jpeg"
-				alt="Landing"
-				fill
-				style={{ objectFit: "cover", opacity: 0.5 }}
-			/>
-			<Flex
-				width="100%"
-				px="16px"
-				gap="8px"
-				style={{
-					position: "absolute",
-					top: "50%",
-					left: "50%",
-					transform: "translate(-50%, -50%)",
-					fontSize: "48px",
-					fontWeight: "bold",
-					flexDirection: "column",
-					alignItems: "center",
-					textAlign: "center",
-				}}
-			>
-				<Image src="/bikefest.png" alt="Logo" width={500} height={500} />
-				<HighlightedText>
-					2026 Date & Location announcement coming soon!
-				</HighlightedText>
-			</Flex>
-		</Flex>
-	);
+   return (
+      <Flex
+         style={{
+            height: "100vh",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+         }}
+      >
+         <Image
+            src="/bikes.jpeg"
+            alt="Landing"
+            fill
+            style={{ objectFit: "cover", opacity: 0.5 }}
+         />
+         <Flex
+            width="100%"
+            px="16px"
+            gap="8px"
+            style={{
+               position: "absolute",
+               top: "50%",
+               left: "50%",
+               transform: "translate(-50%, -50%)",
+               fontSize: "48px",
+               fontWeight: "bold",
+               flexDirection: "column",
+               alignItems: "center",
+               textAlign: "center",
+            }}
+         >
+            <Image src="/bikefest.png" alt="Logo" width={500} height={500} />
+            <HighlightedText>
+               2026 Date & Location announcement coming soon!
+            </HighlightedText>
+         </Flex>
+      </Flex>
+   );
 }
 
 const HighlightedText = ({ children }: { children: React.ReactNode }) => (
-	<Flex
-		px={{ initial: "16px", sm: "24px" }}
-		py={{ initial: "4px", sm: "12px" }}
-		style={{
-			backgroundColor: "#d8af53",
-			borderRadius: "50px",
-		}}
-	>
-		<Text size={{ initial: "6", sm: "8" }} style={{ color: "white" }}>
-			{children}
-		</Text>
-	</Flex>
+   <Flex
+      px={{ initial: "16px", sm: "24px" }}
+      py={{ initial: "4px", sm: "12px" }}
+      style={{
+         backgroundColor: "#d8af53",
+         borderRadius: "50px",
+      }}
+   >
+      <Text size={{ initial: "6", sm: "8" }} style={{ color: "white" }}>
+         {children}
+      </Text>
+   </Flex>
 );

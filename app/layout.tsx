@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Coming_Soon } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import { Flex, Text, Theme } from "@radix-ui/themes";
 import Image from "next/image";
 

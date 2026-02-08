@@ -86,7 +86,7 @@ const DonateButton = () => (
       style={{
          padding: "18px",
          cursor: "pointer",
-         fontFamily: "var(--font-coming-soon)",
+         fontFamily: "var(--font-poppins)",
       }}
       onClick={() => window.FundraiseUp?.openCheckout("FUNNKVNBSJL")}
    >
@@ -130,7 +130,7 @@ const MobileHeader = () => (
                      size={{ initial: "3", sm: "5", md: "6" }}
                      style={{
                         color: "var(--lime-10)",
-                        fontFamily: "var(--font-coming-soon)",
+                        fontFamily: "var(--font-poppins)",
                      }}
                   >
                      {label}
@@ -160,7 +160,7 @@ const HeaderButton = ({
             color: hover ? "var(--lime-12)" : "var(--lime-3)",
             background: hover ? "var(--lime-8)" : "transparent",
             cursor: "pointer",
-            fontFamily: "var(--font-coming-soon)",
+            fontFamily: "var(--font-poppins)",
          }}
          {...props}
       >

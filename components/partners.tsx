@@ -87,7 +87,7 @@ export function Partners() {
                      width: "fit-content",
                      padding: "20px",
                      marginInline: "auto",
-                     fontFamily: "var(--font-coming-soon)",
+                     fontFamily: "var(--font-poppins)",
                      backgroundColor: "#d8af53",
                      cursor: "pointer",
                   }}
@@ -140,7 +140,7 @@ export const PartnerCard = ({
             size="4"
             style={{
                color: "var(--lime-12)",
-               fontFamily: "var(--font-coming-soon)",
+               fontFamily: "var(--font-poppins)",
             }}
          >
             {group.name}

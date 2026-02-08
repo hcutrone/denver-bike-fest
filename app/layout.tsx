@@ -1,18 +1,31 @@
 import type { Metadata } from "next";
-import { Coming_Soon } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { Flex, Text, Theme } from "@radix-ui/themes";
+import localFont from "next/font/local";
 import { headers } from "next/headers";
 import Image from "next/image";
 import Script from "next/script";
-import { Footer, Header } from "./components";
+import { Footer, Header } from "@/components";
 
-const comingSoon = Coming_Soon({
-   weight: "400",
-   variable: "--font-coming-soon",
-   subsets: ["latin"],
-   display: "swap",
+const poppins = localFont({
+   src: [
+      {
+         path: "../public/fonts/poppins/Poppins-Regular.ttf",
+         weight: "400",
+         style: "normal",
+      },
+      {
+         path: "../public/fonts/poppins/Poppins-ExtraBold.ttf",
+         weight: "800",
+         style: "normal",
+      },
+      {
+         path: "../public/fonts/poppins/Poppins-Light.ttf",
+         weight: "300",
+         style: "normal",
+      },
+   ],
 });
 
 export const metadata: Metadata = {
@@ -69,7 +82,7 @@ export default async function RootLayout({
    const headerStore = await headers();
    const showSite = headerStore.get("x-show-site") === "true";
    return (
-      <html lang="en" className={comingSoon.variable}>
+      <html lang="en" className={poppins.className}>
          <head>
             <Script id="fundraiseup" strategy="afterInteractive">
                {`
@@ -83,10 +96,10 @@ export default async function RootLayout({
 					`}
             </Script>
          </head>
-         <body className={`${comingSoon.className} antialiased`}>
+         <body>
             <Theme
                appearance="light"
-               style={{ fontFamily: "var(--font-coming-soon)" }}
+               style={{ fontFamily: "var(--font-poppins)" }}
                accentColor="lime"
             >
                <div style={{ backgroundColor: "var(--lime-1)" }}>

@@ -92,7 +92,7 @@ export default function PartnersPage() {
                      </Label.Root>
                      <TextField.Root
                         id="repName"
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
+                        style={{ fontFamily: "var(--font-poppins)" }}
                      />
                   </Box>
                   <Box>
@@ -106,7 +106,7 @@ export default function PartnersPage() {
                      </Label.Root>
                      <TextField.Root
                         id="groupName"
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
+                        style={{ fontFamily: "var(--font-poppins)" }}
                      />
                   </Box>
                   <Box>
@@ -120,7 +120,7 @@ export default function PartnersPage() {
                      </Label.Root>
                      <TextField.Root
                         id="link"
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
+                        style={{ fontFamily: "var(--font-poppins)" }}
                      />
                   </Box>
                   <Box>
@@ -134,7 +134,7 @@ export default function PartnersPage() {
                      </Label.Root>
                      <TextField.Root
                         id="email"
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
+                        style={{ fontFamily: "var(--font-poppins)" }}
                         type="email"
                      />
                   </Box>
@@ -151,7 +151,7 @@ export default function PartnersPage() {
                         id="message"
                         size="3"
                         resize={"vertical"}
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
+                        style={{ fontFamily: "var(--font-poppins)" }}
                      />
                   </Box>
                   <Button
@@ -162,7 +162,7 @@ export default function PartnersPage() {
                         padding: "18px",
                         margin: "auto",
                         marginTop: "8px",
-                        fontFamily: "var(--font-coming-soon)",
+                        fontFamily: "var(--font-poppins)",
                         backgroundColor: "#d8af53",
                         cursor: "pointer",
                      }}

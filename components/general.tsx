@@ -197,7 +197,7 @@ export const General = () => (
             radius="full"
             style={{
                backgroundColor: "#d8af53",
-               fontFamily: "var(--font-coming-soon)",
+               fontFamily: "var(--font-poppins)",
                cursor: "pointer",
                padding: "20px",
             }}
@@ -244,7 +244,7 @@ export const General = () => (
                radius="full"
                style={{
                   backgroundColor: "#d8af53",
-                  fontFamily: "var(--font-coming-soon)",
+                  fontFamily: "var(--font-poppins)",
                   padding: "20px",
                   cursor: "pointer",
                   marginTop: "16px",

@@ -68,7 +68,7 @@ export function ContactUs() {
                   </Label.Root>
                   <TextField.Root
                      id="name"
-                     style={{ fontFamily: "var(--font-coming-soon)" }}
+                     style={{ fontFamily: "var(--font-poppins)" }}
                   />
                </Box>
                <Box>
@@ -82,7 +82,7 @@ export function ContactUs() {
                   </Label.Root>
                   <TextField.Root
                      id="email"
-                     style={{ fontFamily: "var(--font-coming-soon)" }}
+                     style={{ fontFamily: "var(--font-poppins)" }}
                      type="email"
                   />
                </Box>
@@ -99,7 +99,7 @@ export function ContactUs() {
                      id="message"
                      size="3"
                      resize={"vertical"}
-                     style={{ fontFamily: "var(--font-coming-soon)" }}
+                     style={{ fontFamily: "var(--font-poppins)" }}
                   />
                </Box>
                <Button
@@ -110,7 +110,7 @@ export function ContactUs() {
                      padding: "18px",
                      margin: "auto",
                      marginTop: "8px",
-                     fontFamily: "var(--font-coming-soon)",
+                     fontFamily: "var(--font-poppins)",
                      backgroundColor: "#d8af53",
                      cursor: "pointer",
                   }}

@@ -22,7 +22,7 @@
 body {
    background: var(--background);
    color: var(--foreground);
-   font-family: var(--font-coming-soon), Arial, Helvetica, sans-serif;
+   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
 :root,
@@ -111,5 +111,5 @@ body {
 }
 
 .rt-Heading {
-   font-family: var(--fon-coming-soon);
+   font-family: var(--font-poppins);
 }

@@ -1,6 +1,6 @@
 "use server";
 
-import { Flex, Text } from "@radix-ui/themes";
+import { Flex, Text, VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
 import { General, Sponsors } from "./components";
 import { About } from "./components/about";
@@ -52,7 +52,15 @@ function LandingImage() {
 					textAlign: "center",
 				}}
 			>
-				<Image src="/bikefest.png" alt="Logo" width={500} height={500} />
+				<Image
+					src="/bikefest.png"
+					alt="Denver Bike Fest Logo"
+					width={500}
+					height={500}
+				/>
+				<VisuallyHidden>
+					<h1>Denver Bike Fest</h1>
+				</VisuallyHidden>
 				<HighlightedText>Bikes, Community, and Connection!</HighlightedText>
 				<HighlightedText>June 13, 2026 | 3PM - 9PM</HighlightedText>
 				<HighlightedText>York Street Yards</HighlightedText>

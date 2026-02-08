@@ -16,27 +16,29 @@ import { useState } from "react";
 
 export function Header() {
 	return (
-		<Flex
-			width="100vw"
-			height="64px"
-			justify="center"
-			style={{
-				backgroundColor: "var(--lime-9)",
-				position: "fixed",
-				top: 0,
-				zIndex: 1000,
-				paddingInline: "16px",
-				borderBottom: "3px solid var(--lime-6)",
-			}}
-		>
-			<Container height="100%" display={{ initial: "none", sm: "initial" }}>
-				<DesktopHeader />
-			</Container>
+		<header>
+			<Flex
+				width="100vw"
+				height="64px"
+				justify="center"
+				style={{
+					backgroundColor: "var(--lime-9)",
+					position: "fixed",
+					top: 0,
+					zIndex: 1000,
+					paddingInline: "16px",
+					borderBottom: "3px solid var(--lime-6)",
+				}}
+			>
+				<Container height="100%" display={{ initial: "none", sm: "initial" }}>
+					<DesktopHeader />
+				</Container>
 
-			<Container display={{ initial: "initial", sm: "none" }} height="100%">
-				<MobileHeader />
-			</Container>
-		</Flex>
+				<Container display={{ initial: "initial", sm: "none" }} height="100%">
+					<MobileHeader />
+				</Container>
+			</Flex>
+		</header>
 	);
 }
 

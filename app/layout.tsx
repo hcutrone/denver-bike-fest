@@ -69,7 +69,9 @@ export default function RootLayout() {
                accentColor="lime"
             >
                <div style={{ backgroundColor: "var(--lime-1)" }}>
-                  <ComingSoon />
+                  <main>
+                     <ComingSoon />
+                  </main>
                </div>
             </Theme>
          </body>

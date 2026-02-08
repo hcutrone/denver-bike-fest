@@ -3,7 +3,7 @@ import { ChevronUpIcon } from "@radix-ui/react-icons";
 import { ChevronDownIcon, Flex, Grid, Text } from "@radix-ui/themes";
 import { Collapsible } from "radix-ui";
 import { useState } from "react";
-import { PartnerCard } from "@/app/partners/page";
+import { PartnerCard } from "@/components";
 
 export function CollapsiblePartnerGrid({
    partner,

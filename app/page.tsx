@@ -2,10 +2,7 @@
 
 import { Flex, Text, VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
-import { General, Sponsors } from "./components";
-import { About } from "./components/about";
-import { ContactUs } from "./components/contact";
-import { Partners } from "./components/partners";
+import { About, ContactUs, General, Partners, Sponsors } from "@/components";
 
 export default async function Home() {
    return (

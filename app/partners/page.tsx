@@ -1,17 +1,7 @@
 "use client";
 
-import {
-   Box,
-   Button,
-   Flex,
-   Heading,
-   Text,
-   TextArea,
-   TextField,
-} from "@radix-ui/themes";
-import Image from "next/image";
-import { Label } from "radix-ui";
-import { CollapsiblePartnerGrid, EmailForm } from "@/components";
+import { Flex, Heading, Text } from "@radix-ui/themes";
+import { CollapsiblePartnerGrid } from "@/components";
 import { partners } from "../../partner-data";
 
 export default function PartnersPage() {
@@ -29,13 +19,13 @@ export default function PartnersPage() {
          <Heading
             as="h1"
             trim="end"
-            size={{ initial: "6", sm: "8", md: "9" }}
-            style={{ color: "var(--lime-10)" }}
+            size={{ initial: "7", xs: "8", sm: "9" }}
+            style={{ color: "var(--dark-green)" }}
          >
-            Bike Fest Partners
+            Denver Bike Fest Partners
          </Heading>
          <Text
-            style={{ color: "var(--lime-10)" }}
+            style={{ color: "var(--dark-green)" }}
             size={{ initial: "3", sm: "5", md: "6" }}
          >
             {
@@ -54,128 +44,13 @@ export default function PartnersPage() {
          >
             <Flex align="center" direction="column" gap="32px" p="12px">
                <Text
-                  style={{ color: "var(--lime-10)" }}
+                  style={{ color: "var(--dark-green)" }}
                   size={{ initial: "3", sm: "5", md: "6" }}
                >
-                  {
-                     "Interested in partnering with Denver Bike Fest next year? Fill out this form and we'll get in touch!"
-                  }
+                  Interested in partnering with Denver Bike Fest next year?
+                  Check back in on <strong>March 15, 2026!</strong>
                </Text>
-               <Box
-                  style={{
-                     borderRadius: "12px",
-                     border: "2px solid var(--lime-8)",
-                     overflow: "hidden",
-                  }}
-               >
-                  <Image
-                     src="/bike-n-brew-table.jpeg"
-                     alt="Partner Image"
-                     width={300}
-                     height={300}
-                  />
-               </Box>
             </Flex>
-            <EmailForm
-               template={process.env.NEXT_PUBLIC_PARTNER_EMAILJS_TEMPLATE_ID!}
-               validate={() => true}
-            >
-               <Flex gap="8px" direction="column" maxWidth={"400px"} mx="auto">
-                  <Box>
-                     <Label.Root htmlFor="repName">
-                        <Text
-                           size={{ initial: "3", sm: "5", md: "6" }}
-                           style={{ color: "var(--lime-11)" }}
-                        >
-                           Representative Name:
-                        </Text>
-                     </Label.Root>
-                     <TextField.Root
-                        id="repName"
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
-                     />
-                  </Box>
-                  <Box>
-                     <Label.Root htmlFor="groupName">
-                        <Text
-                           size={{ initial: "3", sm: "5", md: "6" }}
-                           style={{ color: "var(--lime-11)" }}
-                        >
-                           Group Name:
-                        </Text>
-                     </Label.Root>
-                     <TextField.Root
-                        id="groupName"
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
-                     />
-                  </Box>
-                  <Box>
-                     <Label.Root htmlFor="link">
-                        <Text
-                           size={{ initial: "3", sm: "5", md: "6" }}
-                           style={{ color: "var(--lime-11)" }}
-                        >
-                           Website/Social Link:
-                        </Text>
-                     </Label.Root>
-                     <TextField.Root
-                        id="link"
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
-                     />
-                  </Box>
-                  <Box>
-                     <Label.Root htmlFor="email">
-                        <Text
-                           size={{ initial: "3", sm: "5", md: "6" }}
-                           style={{ color: "var(--lime-11)" }}
-                        >
-                           Email:
-                        </Text>
-                     </Label.Root>
-                     <TextField.Root
-                        id="email"
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
-                        type="email"
-                     />
-                  </Box>
-                  <Box>
-                     <Label.Root htmlFor="message">
-                        <Text
-                           size={{ initial: "3", sm: "5", md: "6" }}
-                           style={{ color: "var(--lime-11)" }}
-                        >
-                           Message:
-                        </Text>
-                     </Label.Root>
-                     <TextArea
-                        id="message"
-                        size="3"
-                        resize={"vertical"}
-                        style={{ fontFamily: "var(--font-coming-soon)" }}
-                     />
-                  </Box>
-                  <Button
-                     type="submit"
-                     radius="full"
-                     style={{
-                        width: "fit-content",
-                        padding: "18px",
-                        margin: "auto",
-                        marginTop: "8px",
-                        fontFamily: "var(--font-coming-soon)",
-                        backgroundColor: "#d8af53",
-                        cursor: "pointer",
-                     }}
-                  >
-                     <Text
-                        size={{ initial: "3", sm: "5", md: "6" }}
-                        style={{ color: "white" }}
-                     >
-                        Submit
-                     </Text>
-                  </Button>
-               </Flex>
-            </EmailForm>
          </Flex>
       </Flex>
    );

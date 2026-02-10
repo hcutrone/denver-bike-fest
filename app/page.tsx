@@ -1,17 +1,17 @@
 "use server";
 
-import { Flex, Text, VisuallyHidden } from "@radix-ui/themes";
+import { Flex, VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
-import { About, ContactUs, General, Partners, Sponsors } from "@/components";
+import { ContactUs, General, Partners } from "@/components";
+import { HighlightedText } from "./layout";
 
 export default async function Home() {
    return (
       <>
          <LandingImage />
-         <Sponsors />
-         <About />
          <General />
          <Partners />
+         {/* <Sponsors /> */}
          <ContactUs />
       </>
    );
@@ -28,7 +28,7 @@ function LandingImage() {
          }}
       >
          <Image
-            src="/bikes.jpeg"
+            src="/landing.jpeg"
             alt="Landing"
             fill
             style={{ objectFit: "cover", opacity: 0.5 }}
@@ -50,10 +50,10 @@ function LandingImage() {
             }}
          >
             <Image
-               src="/bikefest.png"
+               src="/logo_vertical.png"
                alt="Denver Bike Fest Logo"
-               width={500}
-               height={500}
+               width={300}
+               height={300}
             />
             <VisuallyHidden>
                <h1>Denver Bike Fest</h1>
@@ -65,18 +65,3 @@ function LandingImage() {
       </Flex>
    );
 }
-
-const HighlightedText = ({ children }: { children: React.ReactNode }) => (
-   <Flex
-      px={{ initial: "16px", sm: "24px" }}
-      py={{ initial: "4px", sm: "12px" }}
-      style={{
-         backgroundColor: "#d8af53",
-         borderRadius: "50px",
-      }}
-   >
-      <Text size={{ initial: "6", sm: "8" }} style={{ color: "white" }}>
-         {children}
-      </Text>
-   </Flex>
-);

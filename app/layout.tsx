@@ -1,15 +1,41 @@
 import type { Metadata } from "next";
-import { Coming_Soon } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { Flex, Text, Theme } from "@radix-ui/themes";
+import localFont from "next/font/local";
+import { headers } from "next/headers";
 import Image from "next/image";
+import Script from "next/script";
+import { Footer, Header } from "@/components";
 
-const comingSoon = Coming_Soon({
-   weight: "400",
-   variable: "--font-coming-soon",
-   subsets: ["latin"],
-   display: "swap",
+const poppins = localFont({
+   src: [
+      {
+         path: "../public/fonts/poppins/Poppins-ExtraBold.ttf",
+         weight: "800",
+         style: "normal",
+      },
+      {
+         path: "../public/fonts/poppins/Poppins-Bold.ttf",
+         weight: "700",
+         style: "normal",
+      },
+      {
+         path: "../public/fonts/poppins/Poppins-Medium.ttf",
+         weight: "500",
+         style: "normal",
+      },
+      {
+         path: "../public/fonts/poppins/Poppins-Regular.ttf",
+         weight: "400",
+         style: "normal",
+      },
+      {
+         path: "../public/fonts/poppins/Poppins-Light.ttf",
+         weight: "300",
+         style: "normal",
+      },
+   ],
 });
 
 export const metadata: Metadata = {
@@ -49,7 +75,7 @@ export const metadata: Metadata = {
       siteName: "Denver Bike Fest",
       images: [
          {
-            url: "/logo.png",
+            url: "/logo_vertical.png",
             alt: "Denver Bike Fest Logo",
          },
       ],
@@ -58,19 +84,44 @@ export const metadata: Metadata = {
    },
 };
 
-export default function RootLayout() {
+export default async function RootLayout({
+   children,
+}: {
+   children: React.ReactNode;
+}) {
+   const headerStore = await headers();
+   const showSite = headerStore.get("x-show-site") === "true";
    return (
-      <html lang="en" className={comingSoon.variable}>
-         <body className={`${comingSoon.className} antialiased`}>
+      <html lang="en" className={poppins.className}>
+         <Script id="fundraiseup" strategy="afterInteractive">
+            {`
+               (function(w,d,s,n,a){if(!w[n]){var l='call,catch,on,once,set,then,track,openCheckout'
+               .split(','),i,o=function(n){return'function'==typeof n?o.l.push([arguments])&&o
+               :function(){return o.l.push([n,arguments])&&o}},t=d.getElementsByTagName(s)[0],
+               j=d.createElement(s);j.async=!0;j.src='https://cdn.fundraiseup.com/widget/'+a+'';
+               t.parentNode.insertBefore(j,t);o.s=Date.now();o.v=5;o.h=w.location.href;o.l=[];
+               for(i=0;i<8;i++)o[l[i]]=o(l[i]);w[n]=o}
+               })(window,document,'script','FundraiseUp','AUAHPMKJ');
+            `}
+         </Script>
+         <body>
             <Theme
                appearance="light"
-               style={{ fontFamily: "var(--font-coming-soon)" }}
+               style={{ fontFamily: "var(--font-poppins)" }}
                accentColor="lime"
             >
-               <div style={{ backgroundColor: "var(--lime-1)" }}>
-                  <main>
-                     <ComingSoon />
-                  </main>
+               <div style={{ backgroundColor: "var(--light-background)" }}>
+                  {showSite ? (
+                     <>
+                        <Header />
+                        <main>{children}</main>
+                        <Footer />
+                     </>
+                  ) : (
+                     <main>
+                        <ComingSoon />
+                     </main>
+                  )}
                </div>
             </Theme>
          </body>
@@ -89,7 +140,7 @@ function ComingSoon() {
          }}
       >
          <Image
-            src="/bikes.jpeg"
+            src="/landing.jpeg"
             alt="Landing"
             fill
             style={{ objectFit: "cover", opacity: 0.5 }}
@@ -110,7 +161,12 @@ function ComingSoon() {
                textAlign: "center",
             }}
          >
-            <Image src="/bikefest.png" alt="Logo" width={500} height={500} />
+            <Image
+               src="/logo_vertical.png"
+               alt="Logo"
+               width={500}
+               height={500}
+            />
             <HighlightedText>
                2026 Date & Location announcement coming soon!
             </HighlightedText>
@@ -119,16 +175,24 @@ function ComingSoon() {
    );
 }
 
-const HighlightedText = ({ children }: { children: React.ReactNode }) => (
+export const HighlightedText = ({
+   children,
+}: {
+   children: React.ReactNode;
+}) => (
    <Flex
       px={{ initial: "16px", sm: "24px" }}
       py={{ initial: "4px", sm: "12px" }}
       style={{
-         backgroundColor: "#d8af53",
+         backgroundColor: "var(--yellow-accent)",
          borderRadius: "50px",
       }}
    >
-      <Text size={{ initial: "6", sm: "8" }} style={{ color: "white" }}>
+      <Text
+         size={{ initial: "6", xs: "7", md: "8" }}
+         weight="bold"
+         style={{ color: "white" }}
+      >
          {children}
       </Text>
    </Flex>

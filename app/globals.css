@@ -22,7 +22,7 @@
 body {
    background: var(--background);
    color: var(--foreground);
-   font-family: var(--font-coming-soon), Arial, Helvetica, sans-serif;
+   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
 :root,
@@ -59,6 +59,11 @@ body {
    --lime-surface: #e9eee7cc !important;
    --lime-indicator: #4d643b !important;
    --lime-track: #4d643b !important;
+
+   --dark-green: #03574a;
+   --yellow-accent: #b5a546;
+   --orange-accent: #ce8734;
+   --light-background: #eaeade;
 }
 
 @supports (color: color(display-p3 1 1 1)) {
@@ -102,14 +107,16 @@ body {
 }
 
 .rt-Text {
-   color: var(--lime-3);
-   line-height: var(--line-height-6);
-   letter-spacing: var(--letter-spacing-6);
-}
-.rt-Text:not([class*="rt-r-size"]) {
-   font-size: var(--font-size-6);
+   color: var(--light-background);
 }
 
-.rt-Heading {
-   font-family: var(--fon-coming-soon);
+iframe#XBWGTSDK {
+   display: none !important;
+   visibility: hidden !important;
+   width: 0 !important;
+   height: 0 !important;
+   opacity: 0 !important;
+   pointer-events: none !important;
+   position: absolute !important;
+   overflow: hidden !important;
 }

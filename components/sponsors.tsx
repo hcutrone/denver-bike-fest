@@ -22,7 +22,6 @@ const sponsorTiers = [
       logo: "/cruiser.png",
       color: "#8f9b93",
    },
-   { name: "Strider", logo: "/strider.png", color: "#d5c487" },
 ];
 
 export function Sponsors() {

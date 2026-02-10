@@ -8,11 +8,18 @@ import {
    DropdownMenu,
    Flex,
    IconButton,
-   Link,
    Text,
 } from "@radix-ui/themes";
 import Image from "next/image";
 import { useState } from "react";
+
+declare global {
+   interface Window {
+      FundraiseUp: {
+         openCheckout: (campaignId: string, options?: object) => void;
+      };
+   }
+}
 
 export function Header() {
    return (
@@ -22,12 +29,12 @@ export function Header() {
             height="64px"
             justify="center"
             style={{
-               backgroundColor: "var(--lime-9)",
+               backgroundColor: "var(--dark-green)",
                position: "fixed",
                top: 0,
                zIndex: 1000,
                paddingInline: "16px",
-               borderBottom: "3px solid var(--lime-6)",
+               borderBottom: "10px solid var(--yellow-accent)",
             }}
          >
             <Container
@@ -60,39 +67,41 @@ const DesktopHeader = () => (
          onClick={() => scrollToSection("")}
          style={{ cursor: "pointer", background: "transparent" }}
       >
-         <Image src="/bikefest.png" alt="Logo" width={75} height={75} />
+         <Image
+            src="/logo_horizontal_no_year.png"
+            alt="Logo"
+            width={200}
+            height={75}
+         />
       </Button>
       {HeaderButtons.map(({ label, id }) => (
          <HeaderButton key={id} onClick={() => scrollToSection(id)}>
-            <Text size={{ initial: "3", sm: "6" }}>{label}</Text>
+            <Text size={{ initial: "3", sm: "6", md: "7" }}>{label}</Text>
          </HeaderButton>
       ))}
-      <Button
-         asChild
-         color="lime"
-         variant="surface"
-         radius="full"
-         style={{
-            padding: "18px",
-            cursor: "pointer",
-            fontFamily: "var(--font-coming-soon)",
-         }}
-      >
-         <Link
-            href="https://gofund.me/026af392f"
-            target="_blank"
-            rel="noopener noreferrer"
-            underline="none"
-         >
-            <Text
-               size={{ initial: "3", sm: "6" }}
-               style={{ color: "var(--lime-12)" }}
-            >
-               Donate
-            </Text>
-         </Link>
-      </Button>
+      <DonateButton />
    </Flex>
+);
+
+const DonateButton = () => (
+   <Button
+      radius="full"
+      style={{
+         padding: "18px",
+         cursor: "pointer",
+         fontFamily: "var(--font-poppins)",
+         backgroundColor: "var(--light-background)",
+      }}
+      onClick={() => window.FundraiseUp?.openCheckout("FUNNKVNBSJL")}
+   >
+      <Text
+         size={{ initial: "3", sm: "6", md: "7" }}
+         style={{ color: "var(--dark-green)" }}
+         weight="bold"
+      >
+         Donate
+      </Text>
+   </Button>
 );
 
 const MobileHeader = () => (
@@ -101,7 +110,12 @@ const MobileHeader = () => (
          onClick={() => scrollToSection("")}
          style={{ cursor: "pointer", background: "transparent" }}
       >
-         <Image src="/bikefest.png" alt="Logo" width={75} height={75} />
+         <Image
+            src="/logo_horizontal_no_year.png"
+            alt="Logo"
+            width={200}
+            height={75}
+         />
       </Button>
       <DropdownMenu.Root>
          <DropdownMenu.Trigger>
@@ -119,20 +133,32 @@ const MobileHeader = () => (
                />
             </IconButton>
          </DropdownMenu.Trigger>
-         <DropdownMenu.Content>
+         <DropdownMenu.Content style={{ minWidth: "125px" }}>
             {HeaderButtons.map(({ label, id }) => (
                <DropdownMenu.Item key={id} onSelect={() => scrollToSection(id)}>
                   <Text
-                     size={{ initial: "3", sm: "5", md: "6" }}
+                     size={"3"}
                      style={{
                         color: "var(--lime-10)",
-                        fontFamily: "var(--font-coming-soon)",
                      }}
                   >
                      {label}
                   </Text>
                </DropdownMenu.Item>
             ))}
+            <DropdownMenu.Item>
+               <Text
+                  size={"3"}
+                  style={{
+                     color: "var(--lime-10)",
+                  }}
+                  onClick={() =>
+                     window.FundraiseUp?.openCheckout("FUNNKVNBSJL")
+                  }
+               >
+                  Donate
+               </Text>
+            </DropdownMenu.Item>
          </DropdownMenu.Content>
       </DropdownMenu.Root>
    </Flex>
@@ -153,7 +179,7 @@ const HeaderButton = ({
             color: hover ? "var(--lime-12)" : "var(--lime-3)",
             background: hover ? "var(--lime-8)" : "transparent",
             cursor: "pointer",
-            fontFamily: "var(--font-coming-soon)",
+            fontFamily: "var(--font-poppins)",
          }}
          {...props}
       >
@@ -172,7 +198,6 @@ const scrollToSection = (id: string) => {
 };
 
 const HeaderButtons = [
-   { label: "About", id: "about" },
    { label: "General Info", id: "general" },
    { label: "Partners", id: "partners" },
    { label: "Contact Us", id: "contact" },

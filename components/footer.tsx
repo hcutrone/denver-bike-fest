@@ -40,7 +40,11 @@ export function Footer() {
                      Harrison Cutrone (
                      <Link
                         href="https://instagram.com/harrisoncutrone"
-                        style={{ fontSize: "inherit", cursor: "pointer" }}
+                        style={{
+                           fontSize: "inherit",
+                           cursor: "pointer",
+                           color: "var(--light-background)",
+                        }}
                         underline="always"
                      >
                         @harrisoncutrone
@@ -77,7 +81,11 @@ export function Footer() {
                      Emily Klienfelter (
                      <Link
                         href="https://instagram.com/bike.this.city"
-                        style={{ fontSize: "inherit", cursor: "pointer" }}
+                        style={{
+                           fontSize: "inherit",
+                           cursor: "pointer",
+                           color: "var(--light-background)",
+                        }}
                         underline="always"
                      >
                         @bikethiscity

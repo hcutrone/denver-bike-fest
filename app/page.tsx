@@ -1,8 +1,9 @@
 "use server";
 
-import { Flex, Text, VisuallyHidden } from "@radix-ui/themes";
+import { Flex, VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
 import { ContactUs, General, Partners } from "@/components";
+import { HighlightedText } from "./layout";
 
 export default async function Home() {
    return (
@@ -64,22 +65,3 @@ function LandingImage() {
       </Flex>
    );
 }
-
-const HighlightedText = ({ children }: { children: React.ReactNode }) => (
-   <Flex
-      px={{ initial: "16px", sm: "24px" }}
-      py={{ initial: "4px", sm: "12px" }}
-      style={{
-         backgroundColor: "var(--yellow-accent)",
-         borderRadius: "50px",
-      }}
-   >
-      <Text
-         size={{ initial: "6", xs: "7", md: "8" }}
-         weight="bold"
-         style={{ color: "white" }}
-      >
-         {children}
-      </Text>
-   </Flex>
-);

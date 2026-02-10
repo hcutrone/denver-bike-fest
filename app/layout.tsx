@@ -177,16 +177,24 @@ function ComingSoon() {
    );
 }
 
-const HighlightedText = ({ children }: { children: React.ReactNode }) => (
+export const HighlightedText = ({
+   children,
+}: {
+   children: React.ReactNode;
+}) => (
    <Flex
       px={{ initial: "16px", sm: "24px" }}
       py={{ initial: "4px", sm: "12px" }}
       style={{
-         backgroundColor: "#d8af53",
+         backgroundColor: "var(--yellow-accent)",
          borderRadius: "50px",
       }}
    >
-      <Text size={{ initial: "6", sm: "8" }} style={{ color: "white" }}>
+      <Text
+         size={{ initial: "6", xs: "7", md: "8" }}
+         weight="bold"
+         style={{ color: "white" }}
+      >
          {children}
       </Text>
    </Flex>

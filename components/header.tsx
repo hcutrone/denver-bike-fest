@@ -76,7 +76,7 @@ const DesktopHeader = () => (
       </Button>
       {HeaderButtons.map(({ label, id }) => (
          <HeaderButton key={id} onClick={() => scrollToSection(id)}>
-            <Text size={{ initial: "3", sm: "6" }}>{label}</Text>
+            <Text size={{ initial: "3", sm: "5", md: "6" }}>{label}</Text>
          </HeaderButton>
       ))}
       <DonateButton />
@@ -91,12 +91,11 @@ const DonateButton = () => (
       style={{
          padding: "18px",
          cursor: "pointer",
-         fontFamily: "var(--font-poppins)",
       }}
       onClick={() => window.FundraiseUp?.openCheckout("FUNNKVNBSJL")}
    >
       <Text
-         size={{ initial: "3", sm: "6" }}
+         size={{ initial: "3", sm: "5", md: "6" }}
          style={{ color: "var(--lime-12)" }}
       >
          Donate
@@ -113,7 +112,7 @@ const MobileHeader = () => (
          <Image
             src="/logo_horizontal_no_year.png"
             alt="Logo"
-            width={75}
+            width={200}
             height={75}
          />
       </Button>
@@ -133,14 +132,13 @@ const MobileHeader = () => (
                />
             </IconButton>
          </DropdownMenu.Trigger>
-         <DropdownMenu.Content>
+         <DropdownMenu.Content style={{ minWidth: "125px" }}>
             {HeaderButtons.map(({ label, id }) => (
                <DropdownMenu.Item key={id} onSelect={() => scrollToSection(id)}>
                   <Text
-                     size={{ initial: "3", sm: "5", md: "6" }}
+                     size={"3"}
                      style={{
                         color: "var(--lime-10)",
-                        fontFamily: "var(--font-poppins)",
                      }}
                   >
                      {label}
@@ -148,7 +146,17 @@ const MobileHeader = () => (
                </DropdownMenu.Item>
             ))}
             <DropdownMenu.Item>
-               <DonateButton />
+               <Text
+                  size={"3"}
+                  style={{
+                     color: "var(--lime-10)",
+                  }}
+                  onClick={() =>
+                     window.FundraiseUp?.openCheckout("FUNNKVNBSJL")
+                  }
+               >
+                  Donate
+               </Text>
             </DropdownMenu.Item>
          </DropdownMenu.Content>
       </DropdownMenu.Root>
@@ -190,7 +198,7 @@ const scrollToSection = (id: string) => {
 
 const HeaderButtons = [
    { label: "About", id: "about" },
-   { label: "General Info", id: "general" },
+   { label: "General", id: "general" },
    { label: "Partners", id: "partners" },
-   { label: "Contact Us", id: "contact" },
+   { label: "Contact", id: "contact" },
 ];

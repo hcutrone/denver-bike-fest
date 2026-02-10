@@ -76,7 +76,7 @@ const DesktopHeader = () => (
       </Button>
       {HeaderButtons.map(({ label, id }) => (
          <HeaderButton key={id} onClick={() => scrollToSection(id)}>
-            <Text size={{ initial: "3", sm: "5", md: "6" }}>{label}</Text>
+            <Text size={{ initial: "3", sm: "6", md: "7" }}>{label}</Text>
          </HeaderButton>
       ))}
       <DonateButton />
@@ -95,7 +95,7 @@ const DonateButton = () => (
       onClick={() => window.FundraiseUp?.openCheckout("FUNNKVNBSJL")}
    >
       <Text
-         size={{ initial: "3", sm: "5", md: "6" }}
+         size={{ initial: "3", sm: "6", md: "7" }}
          style={{ color: "var(--lime-12)" }}
       >
          Donate
@@ -197,8 +197,7 @@ const scrollToSection = (id: string) => {
 };
 
 const HeaderButtons = [
-   { label: "About", id: "about" },
-   { label: "General", id: "general" },
+   { label: "General Info", id: "general" },
    { label: "Partners", id: "partners" },
-   { label: "Contact", id: "contact" },
+   { label: "Contact Us", id: "contact" },
 ];

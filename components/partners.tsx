@@ -1,4 +1,13 @@
-import { Button, Card, Flex, Inset, Link, Text } from "@radix-ui/themes";
+import {
+   Box,
+   Button,
+   Card,
+   Flex,
+   Heading,
+   Inset,
+   Link,
+   Text,
+} from "@radix-ui/themes";
 import Image from "next/image";
 import { featuredPartners } from "../partner-data";
 
@@ -12,25 +21,45 @@ export function Partners() {
       >
          <Flex
             p={{ initial: "24px", sm: "32px" }}
-            py={{ initial: "32px", sm: "64px" }}
             direction="column"
             gap={{ initial: "8px", sm: "16px", md: "32px" }}
             maxWidth="1280px"
             m="auto"
             overflowX="hidden"
          >
-            <Text size={{ initial: "7", sm: "8", md: "9" }}>
-               Bike Fest Partners
-            </Text>
+            <Flex align="center" gap={{ initial: "8px" }}>
+               <Box
+                  height={{ initial: "25px", xs: "30px", sm: "50px" }}
+                  width={{ initial: "150px", xs: "180px", sm: "300px" }}
+                  minWidth={"150px"}
+                  mt={{ initial: "10px", sm: "12px" }}
+                  position="relative"
+               >
+                  <Image
+                     src="/logo_horizontal_no_year.png"
+                     alt="Denver Bike Fest Logo"
+                     fill
+                     objectFit="contain"
+                  />
+               </Box>
+               <Heading
+                  as="h2"
+                  trim="end"
+                  size={{ initial: "7", xs: "8", sm: "9" }}
+                  style={{ color: "var(--lime-3)" }}
+               >
+                  Partners
+               </Heading>
+            </Flex>
             <Text size={{ initial: "3", sm: "5", md: "6" }}>
-               Denver Bike Fest is built by the community, for the community.
+               {`Denver Bike Fest is built by the community, for the community.
                Whether you want to volunteer, sponsor, perform, or just lend a
-               hand spreading the word, there’s a place for you here.
+               hand spreading the word, there's a place for you here.`}
             </Text>
             <Text size={{ initial: "3", sm: "5", md: "6" }}>
-               Click the button below to fill out the form to let us know how
-               you’d like to get involved, and we’ll follow up with more details
-               as we start planning for the next festival!
+               Partner registration for 2026 opens on{" "}
+               <strong>March 15, 2026!</strong> Here are some of the amazing
+               groups we partnered with for the 2025 event:
             </Text>
             <Flex gap={{ initial: "16px", sm: "32px" }} direction="column">
                {featuredPartners.map((partner) => (
@@ -39,7 +68,7 @@ export function Partners() {
                      direction="column"
                      key={partner.header}
                   >
-                     <Flex justify="between">
+                     <Flex justify="between" align="center">
                         <Text size={{ initial: "5", sm: "7", md: "8" }}>
                            {partner.header}
                         </Text>
@@ -79,28 +108,33 @@ export function Partners() {
                      </Flex>
                   </Flex>
                ))}
-               <Button
+               {/* <Button
                   asChild
                   radius="full"
                   mt={{ initial: "16px", sm: "32px" }}
                   style={{
-                     width: "fit-content",
-                     padding: "20px",
                      marginInline: "auto",
                      fontFamily: "var(--font-poppins)",
                      backgroundColor: "#d8af53",
                      cursor: "pointer",
                   }}
                >
-                  <Link href="/partners#contact-form" underline="none">
-                     <Text
-                        size={{ initial: "4", sm: "6", md: "7" }}
-                        style={{ color: "white" }}
-                     >
-                        Get Involved
-                     </Text>
-                  </Link>
-               </Button>
+                  <Flex
+                     asChild
+                     p={{ initial: "16px", sm: "20px", md: "24px" }}
+                     width="fit-content"
+                  >
+                     <Link href="/partners#contact-form" underline="none">
+                        <Text
+                           size={{ initial: "5", sm: "7", md: "8" }}
+                           style={{ color: "white" }}
+                           weight="bold"
+                        >
+                           Get Involved
+                        </Text>
+                     </Link>
+                  </Flex>
+               </Button> */}
             </Flex>
          </Flex>
       </Flex>

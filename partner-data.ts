@@ -69,12 +69,18 @@ const localBusinesses = [
 
 export const partners = [
    { header: "Community Groups", groups: communityGroups },
-   { header: "NonProfit/Government", groups: nonProfits },
+   {
+      header: "Nonprofit Organizations & Government Agencies",
+      groups: nonProfits,
+   },
    { header: "Local Businesses", groups: localBusinesses },
 ];
 
 export const featuredPartners = [
    { header: "Community Groups", groups: communityGroups.slice(0, 8) },
-   { header: "NonProfit/Government", groups: nonProfits.slice(0, 8) },
+   {
+      header: "Nonprofit Organizations & Government Agencies",
+      groups: nonProfits.slice(0, 8),
+   },
    { header: "Local Businesses", groups: localBusinesses.slice(0, 8) },
 ];

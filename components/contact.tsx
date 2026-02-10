@@ -26,7 +26,6 @@ export function ContactUs() {
    return (
       <Flex
          p={{ initial: "24px", sm: "32px" }}
-         py={{ initial: "32px", sm: "64px" }}
          direction="column"
          gap={{ initial: "8px", sm: "16px" }}
          id="contact"
@@ -36,7 +35,7 @@ export function ContactUs() {
          <Heading
             as="h2"
             trim="end"
-            size={{ initial: "7", sm: "8", md: "9" }}
+            size={{ initial: "7", xs: "8", sm: "9" }}
             style={{
                color: "var(--lime-11)",
             }}
@@ -118,6 +117,7 @@ export function ContactUs() {
                   <Text
                      size={{ initial: "3", sm: "5", md: "6" }}
                      style={{ color: "white" }}
+                     weight="bold"
                   >
                      Submit
                   </Text>

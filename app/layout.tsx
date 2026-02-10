@@ -11,13 +11,23 @@ import { Footer, Header } from "@/components";
 const poppins = localFont({
    src: [
       {
-         path: "../public/fonts/poppins/Poppins-Regular.ttf",
-         weight: "400",
+         path: "../public/fonts/poppins/Poppins-ExtraBold.ttf",
+         weight: "800",
          style: "normal",
       },
       {
-         path: "../public/fonts/poppins/Poppins-ExtraBold.ttf",
-         weight: "800",
+         path: "../public/fonts/poppins/Poppins-Bold.ttf",
+         weight: "700",
+         style: "normal",
+      },
+      {
+         path: "../public/fonts/poppins/Poppins-Medium.ttf",
+         weight: "500",
+         style: "normal",
+      },
+      {
+         path: "../public/fonts/poppins/Poppins-Regular.ttf",
+         weight: "400",
          style: "normal",
       },
       {

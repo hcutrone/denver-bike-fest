@@ -35,7 +35,7 @@ export const General = () => (
          <Heading
             as="h2"
             trim="end"
-            size={{ initial: "7", sm: "9", md: "9" }}
+            size={{ initial: "7", xs: "8", sm: "9" }}
             style={{ color: "var(--lime-11)" }}
          >
             General Info
@@ -263,14 +263,16 @@ export const General = () => (
             </Flex>
          </Flex>
 
-         <Heading
-            as="h3"
-            trim="end"
-            size={{ initial: "6", sm: "7", md: "8" }}
-            style={{ color: "var(--lime-11)" }}
-         >
-            FAQs
-         </Heading>
+         <Box py={{ initial: "16px" }}>
+            <Heading
+               as="h3"
+               trim="end"
+               size={{ initial: "6", sm: "7", md: "8" }}
+               style={{ color: "var(--lime-11)" }}
+            >
+               FAQs
+            </Heading>
+         </Box>
          <Accordion.Root
             type="single"
             collapsible
@@ -297,6 +299,7 @@ export const General = () => (
                            <Text
                               size={{ initial: "4", sm: "5", md: "6" }}
                               style={{ color: "var(--lime-11)" }}
+                              align="left"
                            >
                               {q.question}
                            </Text>

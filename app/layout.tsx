@@ -112,7 +112,7 @@ export default async function RootLayout({
                style={{ fontFamily: "var(--font-poppins)" }}
                accentColor="lime"
             >
-               <div style={{ backgroundColor: "var(--lime-1)" }}>
+               <div style={{ backgroundColor: "var(--light-background)" }}>
                   {showSite ? (
                      <>
                         <Header />

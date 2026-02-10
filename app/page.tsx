@@ -70,7 +70,7 @@ const HighlightedText = ({ children }: { children: React.ReactNode }) => (
       px={{ initial: "16px", sm: "24px" }}
       py={{ initial: "4px", sm: "12px" }}
       style={{
-         backgroundColor: "#d8af53",
+         backgroundColor: "var(--yellow-accent)",
          borderRadius: "50px",
       }}
    >

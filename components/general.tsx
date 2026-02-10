@@ -18,12 +18,12 @@ export const General = () => (
       <Box
          width="100%"
          height="64px"
-         style={{ backgroundColor: "var(--lime-9)" }}
+         style={{ backgroundColor: "var(--dark-green)" }}
       />
       <Box
          width="100%"
-         height="8px"
-         style={{ backgroundColor: "var(--lime-7)" }}
+         height="10px"
+         style={{ backgroundColor: "var(--yellow-accent)" }}
       />
       <Flex
          direction={"column"}
@@ -36,7 +36,7 @@ export const General = () => (
             as="h2"
             trim="end"
             size={{ initial: "7", xs: "8", sm: "9" }}
-            style={{ color: "var(--lime-11)" }}
+            style={{ color: "var(--dark-green)" }}
          >
             General Info
          </Heading>
@@ -48,7 +48,7 @@ export const General = () => (
          >
             <Text
                size={{ initial: "3", sm: "5", md: "6" }}
-               style={{ color: "var(--lime-11)" }}
+               style={{ color: "var(--dark-green)" }}
             >
                {`Denver Bike Fest is a community celebration of bikes, music, and
          connection. The festival brings together local bike groups, shops,
@@ -62,22 +62,34 @@ export const General = () => (
                p={{ initial: "12px", sm: "16px", md: "24px" }}
                gap={{ initial: "0px", md: "8px" }}
                style={{
-                  backgroundColor: "var(--lime-9)",
+                  backgroundColor: "var(--yellow-accent)",
                   borderRadius: "25px",
                   textWrap: "nowrap",
                   fontWeight: "bold",
                }}
             >
-               <Text size={{ initial: "5", sm: "6", md: "7" }}>
+               <Text
+                  size={{ initial: "5", sm: "6", md: "7" }}
+                  style={{ color: "white" }}
+               >
                   Date: June 13, 2026
                </Text>
-               <Text size={{ initial: "5", sm: "6", md: "7" }}>
+               <Text
+                  size={{ initial: "5", sm: "6", md: "7" }}
+                  style={{ color: "white" }}
+               >
                   Time: 3:00 pm - 8:00 pm
                </Text>
-               <Text size={{ initial: "5", sm: "6", md: "7" }}>
+               <Text
+                  size={{ initial: "5", sm: "6", md: "7" }}
+                  style={{ color: "white" }}
+               >
                   Location: York Street Yards
                </Text>
-               <Text size={{ initial: "5", sm: "6", md: "7" }}>
+               <Text
+                  size={{ initial: "5", sm: "6", md: "7" }}
+                  style={{ color: "white" }}
+               >
                   Cost: FREE!
                </Text>
             </Flex>
@@ -86,13 +98,13 @@ export const General = () => (
             as="h3"
             trim="end"
             size={{ initial: "5", sm: "7", md: "8" }}
-            style={{ color: "var(--lime-11)" }}
+            style={{ color: "var(--dark-green)" }}
             mb="8px"
          >
             What to Expect
          </Heading>
 
-         {whatToExpect.map((item) => (
+         {whatToExpect.map((item, idx) => (
             <Fragment key={item.header}>
                <Flex
                   direction={{ initial: "column", sm: "row" }}
@@ -105,7 +117,7 @@ export const General = () => (
                      width={300}
                      height={50}
                      style={{
-                        border: "3px solid var(--lime-9)",
+                        border: "3px solid var(--dark-green)",
                         borderRadius: "12px",
                      }}
                   />
@@ -119,20 +131,26 @@ export const General = () => (
                         as="h4"
                         trim="end"
                         size={{ initial: "4", sm: "6", md: "7" }}
-                        style={{ color: "var(--lime-11)" }}
+                        style={{ color: "var(--dark-green)" }}
                      >
                         {item.header}
                      </Heading>
                      <Text
                         size={{ initial: "3", sm: "5", md: "6" }}
                         align={{ initial: "center", sm: "left" }}
-                        style={{ color: "var(--lime-11)" }}
+                        style={{ color: "var(--dark-green)" }}
                      >
                         {item.description}
                      </Text>
                   </Flex>
                </Flex>
-               <Separator orientation="horizontal" size="4" />
+               {idx !== whatToExpect.length - 1 && (
+                  <Separator
+                     orientation="horizontal"
+                     size="4"
+                     style={{ backgroundColor: "var(--yellow-accent)" }}
+                  />
+               )}
             </Fragment>
          ))}
 
@@ -145,7 +163,7 @@ export const General = () => (
          >
             <Text
                size={{ initial: "5", sm: "6", md: "7" }}
-               style={{ color: "var(--lime-11)" }}
+               style={{ color: "var(--dark-green)" }}
             >
                Learn more:
             </Text>
@@ -153,7 +171,7 @@ export const General = () => (
                asChild
                radius="full"
                style={{
-                  backgroundColor: "#d8af53",
+                  backgroundColor: "var(--dark-green)",
                   fontFamily: "var(--font-poppins)",
                   cursor: "pointer",
                }}
@@ -166,7 +184,7 @@ export const General = () => (
                   <Link href="/partners" underline="none">
                      <Text
                         size={{ initial: "5", sm: "6", md: "7" }}
-                        style={{ color: "white" }}
+                        style={{ color: "var(--light-background)" }}
                         weight="bold"
                      >
                         2026 PARTNERS
@@ -182,13 +200,13 @@ export const General = () => (
             as="h2"
             trim="end"
             size={{ initial: "6", sm: "7", md: "8" }}
-            style={{ color: "var(--lime-11)" }}
+            style={{ color: "var(--dark-green)" }}
          >
             Getting There
          </Heading>
          <Text
             size={{ initial: "3", sm: "5", md: "6" }}
-            style={{ color: "var(--lime-11)" }}
+            style={{ color: "var(--dark-green)" }}
          >
             Denver Bike Fest is located at York Street Yards, which is directly
             south of the 39th Avenue Greenway, blocks from major bus stops and a
@@ -208,19 +226,19 @@ export const General = () => (
                <Text
                   size={{ initial: "5", sm: "6", md: "7" }}
                   weight="bold"
-                  style={{ color: "var(--lime-11)" }}
+                  style={{ color: "var(--dark-green)" }}
                >
                   York Street Yards
                </Text>
                <Text
                   size={{ initial: "3", sm: "4", md: "5" }}
-                  style={{ color: "var(--lime-11)" }}
+                  style={{ color: "var(--dark-green)" }}
                >
                   3821-3893 Steele Street
                </Text>
                <Text
                   size={{ initial: "3", sm: "4", md: "5" }}
-                  style={{ color: "var(--lime-11)" }}
+                  style={{ color: "var(--dark-green)" }}
                >
                   Denver, CO 80205
                </Text>
@@ -228,7 +246,7 @@ export const General = () => (
                   asChild
                   radius="full"
                   style={{
-                     backgroundColor: "#d8af53",
+                     backgroundColor: "var(--dark-green)",
                      fontFamily: "var(--font-poppins)",
                      cursor: "pointer",
                      marginTop: "16px",
@@ -251,7 +269,7 @@ export const General = () => (
                         target="_blank"
                      >
                         <Text
-                           style={{ color: "white" }}
+                           style={{ color: "var(--light-background)" }}
                            size={{ initial: "3", sm: "5", md: "6" }}
                            weight="bold"
                         >
@@ -268,7 +286,7 @@ export const General = () => (
                as="h3"
                trim="end"
                size={{ initial: "6", sm: "7", md: "8" }}
-               style={{ color: "var(--lime-11)" }}
+               style={{ color: "var(--dark-green)" }}
             >
                FAQs
             </Heading>
@@ -278,7 +296,7 @@ export const General = () => (
             collapsible
             style={{
                width: "100%",
-               backgroundColor: "var(--lime-3)",
+               backgroundColor: "var(--lime-4)",
                border: "1px solid var(--lime-7)",
                borderRadius: "12px",
             }}
@@ -298,7 +316,7 @@ export const General = () => (
                         >
                            <Text
                               size={{ initial: "4", sm: "5", md: "6" }}
-                              style={{ color: "var(--lime-11)" }}
+                              style={{ color: "var(--dark-green)" }}
                               align="left"
                            >
                               {q.question}
@@ -312,7 +330,7 @@ export const General = () => (
                      <Accordion.Content style={{ paddingTop: "8px" }}>
                         <Text
                            size={{ initial: "3", sm: "4", md: "5" }}
-                           style={{ color: "var(--lime-11)" }}
+                           style={{ color: "var(--dark-green)" }}
                         >
                            {q.answer}
                         </Text>

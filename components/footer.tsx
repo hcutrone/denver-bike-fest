@@ -6,11 +6,18 @@ export function Footer() {
       <footer>
          <Flex
             direction="column"
-            p="4"
             gap="12px"
+            pb={"4"}
             align="center"
-            style={{ backgroundColor: "var(--lime-9)" }}
+            style={{ backgroundColor: "var(--dark-green)" }}
          >
+            <Box
+               width="100%"
+               height="10px"
+               style={{
+                  backgroundColor: "var(--yellow-accent)",
+               }}
+            />
             <Flex
                direction={{ initial: "column", xs: "row" }}
                align="center"
@@ -42,7 +49,10 @@ export function Footer() {
                   </Text>
                </Box>
             </Flex>
-            <Separator size="3" style={{ backgroundColor: "var(--lime-7)" }} />
+            <Separator
+               size="3"
+               style={{ backgroundColor: "var(--light-background)" }}
+            />
             <Flex
                direction={{ initial: "column", xs: "row" }}
                align="center"
@@ -76,11 +86,14 @@ export function Footer() {
                   </Text>
                </Box>
             </Flex>
-            <Separator size="3" style={{ backgroundColor: "var(--lime-7)" }} />
+            <Separator
+               size="3"
+               style={{ backgroundColor: "var(--light-background)" }}
+            />
             <Image
-               src="/logo_vertical.png"
+               src="/logo_horizontal_no_year.png"
                alt="Logo"
-               width={200}
+               width={500}
                height={200}
                style={{ margin: "auto" }}
             />

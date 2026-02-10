@@ -1,17 +1,7 @@
 "use client";
 
-import {
-   Box,
-   Button,
-   Flex,
-   Heading,
-   Text,
-   TextArea,
-   TextField,
-} from "@radix-ui/themes";
-import Image from "next/image";
-import { Label } from "radix-ui";
-import { CollapsiblePartnerGrid, EmailForm } from "@/components";
+import { Flex, Heading, Text } from "@radix-ui/themes";
+import { CollapsiblePartnerGrid } from "@/components";
 import { partners } from "../../partner-data";
 
 export default function PartnersPage() {
@@ -29,13 +19,13 @@ export default function PartnersPage() {
          <Heading
             as="h1"
             trim="end"
-            size={{ initial: "6", sm: "8", md: "9" }}
-            style={{ color: "var(--lime-10)" }}
+            size={{ initial: "7", xs: "8", sm: "9" }}
+            style={{ color: "var(--dark-green)" }}
          >
             Denver Bike Fest Partners
          </Heading>
          <Text
-            style={{ color: "var(--lime-10)" }}
+            style={{ color: "var(--dark-green)" }}
             size={{ initial: "3", sm: "5", md: "6" }}
          >
             {
@@ -54,7 +44,7 @@ export default function PartnersPage() {
          >
             <Flex align="center" direction="column" gap="32px" p="12px">
                <Text
-                  style={{ color: "var(--lime-10)" }}
+                  style={{ color: "var(--dark-green)" }}
                   size={{ initial: "3", sm: "5", md: "6" }}
                >
                   Interested in partnering with Denver Bike Fest next year?

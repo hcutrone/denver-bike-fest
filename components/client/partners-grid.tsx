@@ -18,7 +18,7 @@ export function CollapsiblePartnerGrid({
             gap="16px"
             width="100%"
             style={{
-               backgroundColor: "var(--lime-5)",
+               backgroundColor: "var(--yellow-accent)",
                borderRadius: "12px",
                padding: "16px",
             }}
@@ -37,14 +37,14 @@ export function CollapsiblePartnerGrid({
                >
                   <Text
                      size={{ initial: "4", sm: "5", md: "6" }}
-                     style={{ color: "var(--lime-12)" }}
+                     style={{ color: "white" }}
                   >
                      {partner.header}
                   </Text>
                   {isOpen ? (
-                     <ChevronUpIcon aria-hidden />
+                     <ChevronUpIcon aria-hidden style={{ color: "white" }} />
                   ) : (
-                     <ChevronDownIcon aria-hidden />
+                     <ChevronDownIcon aria-hidden style={{ color: "white" }} />
                   )}
                </Flex>
             </Collapsible.Trigger>

@@ -1,13 +1,4 @@
-import {
-   Box,
-   Button,
-   Card,
-   Flex,
-   Heading,
-   Inset,
-   Link,
-   Text,
-} from "@radix-ui/themes";
+import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import { featuredPartners } from "../partner-data";
 
@@ -15,10 +6,18 @@ export function Partners() {
    return (
       <Flex
          id="partners"
+         direction={"column"}
          style={{
-            backgroundColor: "var(--lime-9)",
+            backgroundColor: "var(--dark-green)",
          }}
       >
+         <Box
+            width="100%"
+            height="20px"
+            style={{
+               backgroundColor: "var(--yellow-accent)",
+            }}
+         />
          <Flex
             p={{ initial: "24px", sm: "32px" }}
             direction="column"
@@ -87,6 +86,11 @@ export function Partners() {
                         direction="row"
                         overflowX="scroll"
                         gap={{ initial: "8px", sm: "16px" }}
+                        style={{
+                           backgroundColor: "var(--yellow-accent)",
+                           borderRadius: "25px",
+                        }}
+                        p={{ initial: "16px", sm: "24px", md: "32px" }}
                      >
                         {partner.groups.map((group, index) => (
                            <PartnerCard
@@ -102,7 +106,7 @@ export function Partners() {
                               minWidth: "20px",
                               display: "flex",
                               background:
-                                 "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--lime-9) 100%)",
+                                 "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--yellow-accent) 100%)",
                            }}
                         />
                      </Flex>
@@ -150,7 +154,7 @@ export const PartnerCard = ({
       style={{
          minWidth: "150px",
          maxWidth: "150px",
-         backgroundColor: "var(--lime-4)",
+         backgroundColor: "var(--light-background)",
          textAlign: "center",
          paddingBottom: "4px",
       }}
@@ -163,7 +167,7 @@ export const PartnerCard = ({
                width={150}
                height={150}
                style={{
-                  backgroundColor: "var(--lime-3)",
+                  backgroundColor: "var(--light-background)",
                   minHeight: "150px",
                   objectFit: "contain",
                }}

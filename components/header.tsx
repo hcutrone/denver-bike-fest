@@ -29,12 +29,12 @@ export function Header() {
             height="64px"
             justify="center"
             style={{
-               backgroundColor: "var(--lime-9)",
+               backgroundColor: "var(--dark-green)",
                position: "fixed",
                top: 0,
                zIndex: 1000,
                paddingInline: "16px",
-               borderBottom: "3px solid var(--lime-6)",
+               borderBottom: "10px solid var(--yellow-accent)",
             }}
          >
             <Container
@@ -85,18 +85,19 @@ const DesktopHeader = () => (
 
 const DonateButton = () => (
    <Button
-      color="lime"
-      variant="surface"
       radius="full"
       style={{
          padding: "18px",
          cursor: "pointer",
+         fontFamily: "var(--font-poppins)",
+         backgroundColor: "var(--light-background)",
       }}
       onClick={() => window.FundraiseUp?.openCheckout("FUNNKVNBSJL")}
    >
       <Text
          size={{ initial: "3", sm: "6", md: "7" }}
-         style={{ color: "var(--lime-12)" }}
+         style={{ color: "var(--dark-green)" }}
+         weight="bold"
       >
          Donate
       </Text>

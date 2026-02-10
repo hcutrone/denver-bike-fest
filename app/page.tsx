@@ -2,16 +2,15 @@
 
 import { Flex, Text, VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
-import { About, ContactUs, General, Partners, Sponsors } from "@/components";
+import { ContactUs, General, Partners } from "@/components";
 
 export default async function Home() {
    return (
       <>
          <LandingImage />
-         <Sponsors />
-         <About />
          <General />
          <Partners />
+         {/* <Sponsors /> */}
          <ContactUs />
       </>
    );
@@ -52,8 +51,8 @@ function LandingImage() {
             <Image
                src="/logo_vertical.png"
                alt="Denver Bike Fest Logo"
-               width={500}
-               height={500}
+               width={300}
+               height={300}
             />
             <VisuallyHidden>
                <h1>Denver Bike Fest</h1>
@@ -75,7 +74,11 @@ const HighlightedText = ({ children }: { children: React.ReactNode }) => (
          borderRadius: "50px",
       }}
    >
-      <Text size={{ initial: "6", sm: "8" }} style={{ color: "white" }}>
+      <Text
+         size={{ initial: "6", xs: "7", md: "8" }}
+         weight="bold"
+         style={{ color: "white" }}
+      >
          {children}
       </Text>
    </Flex>

@@ -1,4 +1,12 @@
-import { Box, Em, Flex, Heading, Separator, Text } from "@radix-ui/themes";
+import {
+   Box,
+   Em,
+   Flex,
+   Heading,
+   Link,
+   Separator,
+   Text,
+} from "@radix-ui/themes";
 import Image from "next/image";
 
 const sponsorTiers = [
@@ -96,6 +104,42 @@ export function Sponsors() {
                )}
             </Flex>
          ))}
+         <Box
+            width="100vw"
+            height="20px"
+            style={{ backgroundColor: "var(--yellow-accent)" }}
+         />
+         <Flex
+            direction="column"
+            justify="center"
+            mx="32px"
+            mb="32px"
+            mt="16px"
+            gap="16px"
+         >
+            <Heading
+               as="h2"
+               trim="end"
+               size={{ initial: "5", sm: "7", md: "8" }}
+               style={{ color: "var(--light-background)" }}
+            >
+               Want to help make Denver Bike Fest happen?
+            </Heading>
+            <Text
+               size={{ initial: "3", sm: "5", md: "6" }}
+               style={{ color: "var(--light-background)" }}
+            >
+               If your business or organization is interested in sponsoring the
+               event or partnering with us, please reach out at{" "}
+               <Link
+                  href="mailto:denverbikefest@gmail.com"
+                  underline="always"
+                  style={{ color: "var(--yellow-accent)" }}
+               >
+                  denverbikefest@gmail.com
+               </Link>
+            </Text>
+         </Flex>
       </Flex>
    );
 }

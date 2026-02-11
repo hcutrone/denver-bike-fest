@@ -4,20 +4,20 @@ import Image from "next/image";
 export function Footer() {
    return (
       <footer>
+         <Box
+            width="100%"
+            height="10px"
+            style={{
+               backgroundColor: "var(--yellow-accent)",
+            }}
+         />
          <Flex
             direction="column"
-            gap="12px"
-            pb={"4"}
+            gap="16px"
+            p={"24px"}
             align="center"
             style={{ backgroundColor: "var(--dark-green)" }}
          >
-            <Box
-               width="100%"
-               height="10px"
-               style={{
-                  backgroundColor: "var(--yellow-accent)",
-               }}
-            />
             <Flex
                direction={{ initial: "column", xs: "row" }}
                align="center"
@@ -25,7 +25,7 @@ export function Footer() {
                justify="center"
                mx="auto"
             >
-               <Text size={{ initial: "2", md: "3" }}>Made with 🫶🏻 by</Text>
+               <Text size={{ initial: "2", sm: "3" }}>Made with 🫶🏻 by</Text>
                <Box>
                   <Avatar
                      src="/harrison.jpeg"
@@ -34,7 +34,7 @@ export function Footer() {
                      size="2"
                   />
                   <Text
-                     size={{ initial: "2", md: "3" }}
+                     size={{ initial: "2", sm: "3" }}
                      style={{ marginLeft: "8px" }}
                   >
                      Harrison Cutrone (
@@ -64,7 +64,7 @@ export function Footer() {
                justify="center"
                mx="auto"
             >
-               <Text size={{ initial: "2", md: "3" }}>
+               <Text size={{ initial: "2", sm: "3" }}>
                   Organized with 🫶🏻 by
                </Text>
                <Box>
@@ -75,7 +75,7 @@ export function Footer() {
                      size="2"
                   />
                   <Text
-                     size={{ initial: "2", md: "3" }}
+                     size={{ initial: "2", sm: "3" }}
                      style={{ marginLeft: "8px" }}
                   >
                      Emily Klienfelter (
@@ -88,7 +88,7 @@ export function Footer() {
                         }}
                         underline="always"
                      >
-                        @bikethiscity
+                        @bike.this.city
                      </Link>
                      )
                   </Text>

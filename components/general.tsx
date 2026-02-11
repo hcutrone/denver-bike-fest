@@ -25,13 +25,7 @@ export const General = () => (
          height="10px"
          style={{ backgroundColor: "var(--yellow-accent)" }}
       />
-      <Flex
-         direction={"column"}
-         p={{ initial: "24px", sm: "32px" }}
-         maxWidth="1280px"
-         m="auto"
-         gap={{ initial: "8px", sm: "16px", md: "32px" }}
-      >
+      <ContentContainer>
          <Heading
             as="h2"
             trim="end"
@@ -193,9 +187,13 @@ export const General = () => (
                </Flex>
             </Button>
          </Flex>
-
-         {/* separator */}
-
+      </ContentContainer>
+      <Box
+         width="100%"
+         height="20px"
+         style={{ backgroundColor: "var(--yellow-accent)" }}
+      />
+      <ContentContainer>
          <Heading
             as="h2"
             trim="end"
@@ -346,7 +344,19 @@ export const General = () => (
                </div>
             ))}
          </Accordion.Root>
-      </Flex>
+      </ContentContainer>
+   </Flex>
+);
+
+const ContentContainer = ({ children }: { children: React.ReactNode }) => (
+   <Flex
+      direction={"column"}
+      p={{ initial: "24px", sm: "32px" }}
+      maxWidth="1280px"
+      m="auto"
+      gap={{ initial: "8px", sm: "16px", md: "32px" }}
+   >
+      {children}
    </Flex>
 );
 

@@ -35,6 +35,11 @@ const poppins = localFont({
          weight: "300",
          style: "normal",
       },
+      {
+         path: "../public/fonts/poppins/Poppins-ExtraBoldItalic.ttf",
+         weight: "800",
+         style: "italic",
+      },
    ],
 });
 
@@ -75,7 +80,7 @@ export const metadata: Metadata = {
       siteName: "Denver Bike Fest",
       images: [
          {
-            url: "/logo_vertical.png",
+            url: "https://denverbikefest.app/logo_vertical.jpg",
             alt: "Denver Bike Fest Logo",
          },
       ],
@@ -107,7 +112,12 @@ export default async function RootLayout({
          <body>
             <Theme
                appearance="light"
-               style={{ fontFamily: "var(--font-poppins)" }}
+               style={{
+                  fontFamily: "var(--font-poppins)",
+                  // @ts-expect-error these font family props iare not recognized by Theme, but is used by the respective component
+                  "--heading-font-family": "var(--font-poppins)",
+                  "--em-font-family": "var(--font-poppins)",
+               }}
                accentColor="lime"
             >
                <div style={{ backgroundColor: "var(--light-background)" }}>

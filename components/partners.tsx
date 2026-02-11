@@ -1,4 +1,13 @@
-import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
+import {
+   Box,
+   Button,
+   Card,
+   Flex,
+   Heading,
+   Inset,
+   Link,
+   Text,
+} from "@radix-ui/themes";
 import Image from "next/image";
 import { featuredPartners } from "../partner-data";
 
@@ -6,12 +15,12 @@ export function Partners() {
    return (
       <Flex
          id="partners"
-         direction={"column"}
          style={{
             backgroundColor: "var(--dark-green)",
          }}
       >
          <Box
+            position="absolute"
             width="100%"
             height="20px"
             style={{
@@ -31,7 +40,7 @@ export function Partners() {
                   height={{ initial: "25px", xs: "30px", sm: "50px" }}
                   width={{ initial: "150px", xs: "180px", sm: "300px" }}
                   minWidth={"150px"}
-                  mt={{ initial: "10px", sm: "12px" }}
+                  mt="8px"
                   position="relative"
                >
                   <Image
@@ -91,6 +100,7 @@ export function Partners() {
                            borderRadius: "25px",
                         }}
                         p={{ initial: "16px", sm: "24px", md: "32px" }}
+                        pr={"0"}
                      >
                         {partner.groups.map((group, index) => (
                            <PartnerCard
@@ -112,10 +122,9 @@ export function Partners() {
                      </Flex>
                   </Flex>
                ))}
-               {/* <Button
+               <Button
                   asChild
                   radius="full"
-                  mt={{ initial: "16px", sm: "32px" }}
                   style={{
                      marginInline: "auto",
                      fontFamily: "var(--font-poppins)",
@@ -128,7 +137,7 @@ export function Partners() {
                      p={{ initial: "16px", sm: "20px", md: "24px" }}
                      width="fit-content"
                   >
-                     <Link href="/partners#contact-form" underline="none">
+                     <Link href="/partners" underline="none">
                         <Text
                            size={{ initial: "5", sm: "7", md: "8" }}
                            style={{ color: "white" }}
@@ -138,7 +147,7 @@ export function Partners() {
                         </Text>
                      </Link>
                   </Flex>
-               </Button> */}
+               </Button>
             </Flex>
          </Flex>
       </Flex>

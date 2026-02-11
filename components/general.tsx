@@ -14,7 +14,7 @@ import { Fragment } from "react";
 import { GOOGLE_MAPS_API_KEY } from "@/env";
 
 export const General = () => (
-   <Flex id="general" direction="column">
+   <Flex id="general" direction="column" overflowX="hidden">
       <Box
          width="100%"
          height="64px"
@@ -194,7 +194,14 @@ export const General = () => (
             </Button>
          </Flex>
 
-         {/* separator */}
+         <Box
+            width="100vw"
+            height="20px"
+            style={{
+               backgroundColor: "var(--yellow-accent)",
+               marginLeft: "calc(-50vw + 50%)",
+            }}
+         />
 
          <Heading
             as="h2"

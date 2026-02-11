@@ -119,6 +119,7 @@ export function Footer() {
                   href="https://www.instagram.com/denverbikefest"
                   size="1"
                   underline="always"
+                  style={{ color: "var(--light-background)" }}
                >
                   Instagram
                </Link>
@@ -131,6 +132,7 @@ export function Footer() {
                   href="https://bikewalkbus.donorsupport.co/page/DenverBikeFest2026"
                   size="1"
                   underline="always"
+                  style={{ color: "var(--light-background)" }}
                >
                   Donate
                </Link>

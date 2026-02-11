@@ -112,10 +112,11 @@ export function Sponsors() {
          <Flex
             direction="column"
             justify="center"
-            mx="32px"
-            mb="32px"
-            mt="16px"
-            gap="16px"
+            p={{ initial: "24px", sm: "32px" }}
+            mx="auto"
+            mb="16px"
+            gap={{ initial: "8px", sm: "16px" }}
+            maxWidth="1280px"
          >
             <Heading
                as="h2"

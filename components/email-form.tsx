@@ -5,23 +5,29 @@ import { CheckCircledIcon, CrossCircledIcon } from "@radix-ui/react-icons";
 import { Box, Flex } from "@radix-ui/themes";
 import { Toast } from "radix-ui";
 import { useRef, useState } from "react";
+import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID } from "@/env";
 
-if (
-   !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ||
-   !process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-) {
+if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID) {
    throw new Error("EmailJS environment variables are not set");
 }
 
-emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 export function EmailForm({
+   id,
    template,
    validate,
+   formToTemplateParams,
+   setLoading,
    children,
 }: {
+   id: string;
    template: string;
    validate: (form: HTMLFormElement) => boolean;
+   formToTemplateParams: (
+      form: HTMLFormElement,
+   ) => Record<string, string | undefined>;
+   setLoading: (loading: boolean) => void;
    children: React.ReactNode;
 }) {
    const [error, setError] = useState<string | null>(null);
@@ -34,27 +40,38 @@ export function EmailForm({
          return;
       }
       const form = formRef.current;
+      setLoading(true);
 
-      if (validate(form)) {
+      if (!validate(form)) {
          setError("Please fill out all fields.");
          setShowToast(true);
          return;
       }
 
+      const templateParams = formToTemplateParams(form);
       emailjs
-         .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, template, form)
+         .send(EMAILJS_SERVICE_ID!, template, templateParams)
          .then(() => {
             form.reset();
          })
-         .catch(() => {
+         .catch((err) => {
             setError("Email failed to send.");
+            console.error(err);
          })
-         .finally(() => setShowToast(true));
+         .finally(() => {
+            setShowToast(true);
+            setLoading(false);
+         });
    };
 
    return (
       <>
-         <form ref={formRef} onSubmit={sendEmail} style={{ width: "100%" }}>
+         <form
+            ref={formRef}
+            id={id}
+            onSubmit={sendEmail}
+            style={{ width: "100%" }}
+         >
             {children}
          </form>
          <ResponseToast open={showToast} setOpen={setShowToast} error={error} />

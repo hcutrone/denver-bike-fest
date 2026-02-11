@@ -1,13 +1,4 @@
-import {
-   Box,
-   Button,
-   Card,
-   Flex,
-   Heading,
-   Inset,
-   Link,
-   Text,
-} from "@radix-ui/themes";
+import { Box, Button, Flex, Heading, Link, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import { featuredPartners } from "../partner-data";
 
@@ -83,6 +74,7 @@ export function Partners() {
                         <Link
                            size={{ initial: "3", sm: "5", md: "6" }}
                            href="/partners"
+                           wrap="nowrap"
                            style={{
                               textDecoration: "underline",
                               color: "var(--lime-3)",
@@ -99,9 +91,19 @@ export function Partners() {
                            backgroundColor: "var(--yellow-accent)",
                            borderRadius: "25px",
                         }}
-                        p={{ initial: "16px", sm: "24px", md: "32px" }}
-                        pr={"0"}
+                        py={{ initial: "16px", sm: "24px", md: "32px" }}
                      >
+                        <div
+                           style={{
+                              position: "sticky",
+                              left: 0,
+                              minHeight: "100%",
+                              minWidth: "20px",
+                              display: "flex",
+                              background:
+                                 "linear-gradient(90deg, var(--yellow-accent) 0%, rgba(255, 255, 255, 0) 100%)",
+                           }}
+                        />
                         {partner.groups.map((group, index) => (
                            <PartnerCard
                               key={group.name + index.toString()}
@@ -158,40 +160,53 @@ export const PartnerCard = ({
    group,
 }: {
    group: { name: string; logo: string };
-}) => (
-   <Card
-      style={{
-         minWidth: "150px",
-         maxWidth: "150px",
-         backgroundColor: "var(--light-background)",
-         textAlign: "center",
-         paddingBottom: "4px",
-      }}
-   >
-      <Flex gap="8px" direction="column" align="center" height="100%">
-         <Inset pb="current" clip="padding-box">
+}) => {
+   const imageSizing = { initial: "150px", sm: "175px", md: "200px" };
+   return (
+      <Flex
+         direction="column"
+         align="center"
+         justify="between"
+         maxWidth={imageSizing}
+         minWidth={imageSizing}
+         overflow="hidden"
+         style={{
+            backgroundColor: "var(--light-background)",
+            borderRadius: "8px",
+         }}
+      >
+         <Flex
+            minHeight={imageSizing}
+            minWidth={imageSizing}
+            align="center"
+            justify="center"
+            position="relative"
+         >
             <Image
                src={group.logo}
                alt={group.name}
-               width={150}
-               height={150}
-               style={{
-                  backgroundColor: "var(--light-background)",
-                  minHeight: "150px",
-                  objectFit: "contain",
-               }}
+               fill
+               objectFit="contain"
+               style={{ maxHeight: "200px" }}
             />
-         </Inset>
-         <Text
-            my="auto"
-            size="4"
-            style={{
-               color: "var(--lime-12)",
-               fontFamily: "var(--font-poppins)",
-            }}
+         </Flex>
+         <Flex
+            p={{ initial: "4px", sm: "6px", md: "8px" }}
+            width="100%"
+            height="100%"
+            justify="center"
+            align="center"
+            style={{ backgroundColor: "var(--dark-green)" }}
          >
-            {group.name}
-         </Text>
+            <Text
+               align="center"
+               size={{ initial: "3", md: "4" }}
+               weight={"medium"}
+               style={{ color: "var(--light-background)" }}
+            >
+               {group.name}
+            </Text>
+         </Flex>
       </Flex>
-   </Card>
-);
+   );
+};

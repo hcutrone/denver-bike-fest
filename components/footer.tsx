@@ -88,7 +88,7 @@ export function Footer() {
                         }}
                         underline="always"
                      >
-                        @bikethiscity
+                        @bike.this.city
                      </Link>
                      )
                   </Text>

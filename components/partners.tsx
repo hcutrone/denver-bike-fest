@@ -1,4 +1,13 @@
-import { Box, Card, Flex, Heading, Inset, Link, Text } from "@radix-ui/themes";
+import {
+   Box,
+   Button,
+   Card,
+   Flex,
+   Heading,
+   Inset,
+   Link,
+   Text,
+} from "@radix-ui/themes";
 import Image from "next/image";
 import { featuredPartners } from "../partner-data";
 
@@ -113,10 +122,9 @@ export function Partners() {
                      </Flex>
                   </Flex>
                ))}
-               {/* <Button
+               <Button
                   asChild
                   radius="full"
-                  mt={{ initial: "16px", sm: "32px" }}
                   style={{
                      marginInline: "auto",
                      fontFamily: "var(--font-poppins)",
@@ -129,7 +137,7 @@ export function Partners() {
                      p={{ initial: "16px", sm: "20px", md: "24px" }}
                      width="fit-content"
                   >
-                     <Link href="/partners#contact-form" underline="none">
+                     <Link href="/partners" underline="none">
                         <Text
                            size={{ initial: "5", sm: "7", md: "8" }}
                            style={{ color: "white" }}
@@ -139,7 +147,7 @@ export function Partners() {
                         </Text>
                      </Link>
                   </Flex>
-               </Button> */}
+               </Button>
             </Flex>
          </Flex>
       </Flex>

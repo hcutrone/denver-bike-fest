@@ -1,5 +1,14 @@
-import { Avatar, Box, Flex, Link, Separator, Text } from "@radix-ui/themes";
+import {
+   Avatar,
+   Box,
+   Flex,
+   HoverCard,
+   Link,
+   Separator,
+   Text,
+} from "@radix-ui/themes";
 import Image from "next/image";
+import { Icons } from "./icons";
 
 export function Footer() {
    return (
@@ -105,6 +114,40 @@ export function Footer() {
                height={200}
                style={{ margin: "auto" }}
             />
+            <Flex gap="8px" align="center" justify="center">
+               <Link
+                  href="https://www.instagram.com/denverbikefest"
+                  size="1"
+                  underline="always"
+               >
+                  Instagram
+               </Link>
+               <Separator
+                  orientation="vertical"
+                  size="1"
+                  style={{ backgroundColor: "var(--light-background)" }}
+               />
+               <Link
+                  href="https://bikewalkbus.donorsupport.co/page/DenverBikeFest2026"
+                  size="1"
+                  underline="always"
+               >
+                  Donate
+               </Link>
+               <Separator
+                  orientation="vertical"
+                  size="1"
+                  style={{ backgroundColor: "var(--light-background)" }}
+               />
+               <HoverCard.Root>
+                  <HoverCard.Trigger>
+                     <Text size="1">Icon Credits</Text>
+                  </HoverCard.Trigger>
+                  <HoverCard.Content>
+                     <Icons />
+                  </HoverCard.Content>
+               </HoverCard.Root>
+            </Flex>
          </Flex>
       </footer>
    );

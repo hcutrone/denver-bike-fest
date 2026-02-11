@@ -34,33 +34,48 @@ function LandingImage() {
             style={{ objectFit: "cover", opacity: 0.5 }}
          />
          <Flex
+            position="relative"
             width="100%"
-            px="16px"
-            gap="8px"
-            style={{
-               position: "absolute",
-               top: "50%",
-               left: "50%",
-               transform: "translate(-50%, -50%)",
-               fontSize: "48px",
-               fontWeight: "bold",
-               flexDirection: "column",
-               alignItems: "center",
-               textAlign: "center",
-            }}
+            height="calc(100% - 72px)"
+            mt="72px"
          >
-            <Image
-               src="/logo_vertical.png"
-               alt="Denver Bike Fest Logo"
-               width={300}
-               height={300}
-            />
-            <VisuallyHidden>
-               <h1>Denver Bike Fest</h1>
-            </VisuallyHidden>
-            <HighlightedText>Bikes, Community, and Connection!</HighlightedText>
-            <HighlightedText>June 13, 2026 | 3PM - 9PM</HighlightedText>
-            <HighlightedText>York Street Yards</HighlightedText>
+            <Flex
+               direction="column"
+               position="absolute"
+               top="50%"
+               left="50%"
+               width="100%"
+               maxHeight="100%"
+               p="16px"
+               gap="8px"
+               align="center"
+               style={{
+                  transform: "translate(-50%, -50%)",
+               }}
+            >
+               <Flex
+                  width={{ initial: "300px", sm: "350px", md: "400px" }}
+                  height={{ initial: "300px", sm: "350px", md: "400px" }}
+                  position="relative"
+               >
+                  <Image
+                     src="/logo_vertical.png"
+                     alt="Denver Bike Fest Logo"
+                     fill
+                     style={{ objectFit: "contain" }}
+                  />
+               </Flex>
+               <VisuallyHidden>
+                  <h1>Denver Bike Fest</h1>
+               </VisuallyHidden>
+               <HighlightedText>
+                  Bikes, Community, and Connection!
+               </HighlightedText>
+               <HighlightedText>
+                  June 13, 2026 | 3:00 pm - 8:00 pm
+               </HighlightedText>
+               <HighlightedText>York Street Yards</HighlightedText>
+            </Flex>
          </Flex>
       </Flex>
    );

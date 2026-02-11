@@ -38,7 +38,7 @@ export function Partners() {
                      src="/logo_horizontal_no_year.png"
                      alt="Denver Bike Fest Logo"
                      fill
-                     objectFit="contain"
+                     style={{ objectFit: "contain" }}
                   />
                </Box>
                <Heading
@@ -186,8 +186,7 @@ export const PartnerCard = ({
                src={group.logo}
                alt={group.name}
                fill
-               objectFit="contain"
-               style={{ maxHeight: "200px" }}
+               style={{ objectFit: "contain", maxHeight: "200px" }}
             />
          </Flex>
          <Flex

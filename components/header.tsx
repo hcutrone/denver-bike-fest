@@ -26,14 +26,14 @@ export function Header() {
       <header>
          <Flex
             width="100vw"
-            height="64px"
+            height="72px"
             justify="center"
+            px={"16px"}
             style={{
                backgroundColor: "var(--dark-green)",
                position: "fixed",
                top: 0,
                zIndex: 1000,
-               paddingInline: "16px",
                borderBottom: "10px solid var(--yellow-accent)",
             }}
          >
@@ -76,7 +76,7 @@ const DesktopHeader = () => (
       </Button>
       {HeaderButtons.map(({ label, id }) => (
          <HeaderButton key={id} onClick={() => scrollToSection(id)}>
-            <Text size={{ initial: "3", sm: "6", md: "7" }}>{label}</Text>
+            <Text size={{ initial: "3", sm: "6" }}>{label}</Text>
          </HeaderButton>
       ))}
       <DonateButton />
@@ -133,11 +133,11 @@ const MobileHeader = () => (
                />
             </IconButton>
          </DropdownMenu.Trigger>
-         <DropdownMenu.Content style={{ minWidth: "125px" }}>
+         <DropdownMenu.Content style={{ minWidth: "150px" }}>
             {HeaderButtons.map(({ label, id }) => (
                <DropdownMenu.Item key={id} onSelect={() => scrollToSection(id)}>
                   <Text
-                     size={"3"}
+                     size={{ initial: "4", xs: "5" }}
                      style={{
                         color: "var(--lime-10)",
                      }}
@@ -148,7 +148,7 @@ const MobileHeader = () => (
             ))}
             <DropdownMenu.Item>
                <Text
-                  size={"3"}
+                  size={{ initial: "4", xs: "5" }}
                   style={{
                      color: "var(--lime-10)",
                   }}

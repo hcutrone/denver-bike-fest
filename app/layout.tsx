@@ -80,7 +80,7 @@ export const metadata: Metadata = {
       siteName: "Denver Bike Fest",
       images: [
          {
-            url: "/logo_vertical.png",
+            url: "https://denverbikefest.app/logo_vertical.jpg",
             alt: "Denver Bike Fest Logo",
          },
       ],

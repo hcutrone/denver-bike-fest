@@ -6,12 +6,12 @@ export function Partners() {
    return (
       <Flex
          id="partners"
-         direction={"column"}
          style={{
             backgroundColor: "var(--dark-green)",
          }}
       >
          <Box
+            position="absolute"
             width="100%"
             height="20px"
             style={{
@@ -91,6 +91,7 @@ export function Partners() {
                            borderRadius: "25px",
                         }}
                         p={{ initial: "16px", sm: "24px", md: "32px" }}
+                        pr={"0"}
                      >
                         {partner.groups.map((group, index) => (
                            <PartnerCard

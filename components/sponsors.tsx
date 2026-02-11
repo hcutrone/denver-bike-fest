@@ -1,4 +1,4 @@
-import { Flex, Separator, Text } from "@radix-ui/themes";
+import { Box, Em, Flex, Heading, Separator, Text } from "@radix-ui/themes";
 import Image from "next/image";
 
 const sponsorTiers = [
@@ -13,11 +13,6 @@ const sponsorTiers = [
       color: "#d8af53",
    },
    {
-      name: "Commuter",
-      logo: "/commuter.png",
-      color: "#879bb4",
-   },
-   {
       name: "Cruiser",
       logo: "/cruiser.png",
       color: "#8f9b93",
@@ -29,59 +24,88 @@ export function Sponsors() {
       name,
       logo,
       color,
+      index,
    }: {
       name: string;
       logo: string;
       color: string;
+      index: number;
    }) => (
-      <Flex
-         direction="column"
-         align="center"
-         width={{ initial: "90px", sm: "140px", md: "165px" }}
-         gap="8px"
-         p={{ initial: "4px", sm: "8px", md: "16px" }}
-         ml={{ initial: "12px", sm: "16px" }}
-      >
-         <Image src={logo} alt={name} width={100} height={50} />
-         <Text
-            size={{ initial: "2", sm: "5" }}
+      <Flex direction="column" align="center" gap="8px">
+         <Image src={logo} alt={name} width={150 - index * 35} height={100} />
+         <Flex
+            width="100%"
+            justify="center"
+            px={"16px"}
             style={{
-               color: "white",
-               fontWeight: "bold",
                backgroundColor: color,
                borderRadius: "50px",
-               width: "100%",
-               textAlign: "center",
             }}
          >
-            {name}
-         </Text>
+            <Text
+               size={(6 - index).toString() as "6" | "5" | "4"}
+               style={{
+                  color: "white",
+                  fontWeight: "bold",
+               }}
+            >
+               {name}
+            </Text>
+         </Flex>
       </Flex>
    );
    return (
-      <Flex direction="column" gap="16px">
+      <Flex
+         direction="column"
+         gap="8px"
+         style={{ backgroundColor: "var(--dark-green)" }}
+      >
+         <Box
+            width="100%"
+            height="20px"
+            style={{ backgroundColor: "var(--yellow-accent)" }}
+         />
          <Flex
-            py={{ initial: "12px", sm: "20px" }}
+            pt={"12px"}
             style={{
-               backgroundColor: "var(--lime-9)",
                justifyContent: "center",
                textAlign: "center",
             }}
          >
-            <Text size={{ initial: "6", sm: "8" }}>
-               Thank you to our sponsors:
-            </Text>
+            <Heading
+               size={{ initial: "7", xs: "8", sm: "9" }}
+               style={{ color: "var(--light-background)" }}
+            >
+               <Em>Thank you to our sponsors:</Em>
+            </Heading>
          </Flex>
-         {sponsorTiers.map((tier) => (
-            <Flex direction="column" key={tier.name} gap="16px">
-               <SponsorHeader {...tier} />
-               <Separator
-                  orientation="horizontal"
-                  size="4"
-                  style={{ height: "10px" }}
-               />
+         {sponsorTiers.map((tier, idx) => (
+            <Flex direction="column" key={tier.name} gap="16px" align="center">
+               <SponsorHeader {...tier} index={idx} />
+               <SponsorSpace index={idx} />
+               {idx < sponsorTiers.length - 1 && (
+                  <Separator
+                     orientation="horizontal"
+                     size="4"
+                     mb={{ initial: "8px", sm: "12px" }}
+                     style={{
+                        height: "4px",
+                        backgroundColor: "var(--light-background)",
+                     }}
+                  />
+               )}
             </Flex>
          ))}
       </Flex>
    );
 }
+
+const SponsorSpace = ({ index }: { index: number }) => (
+   // 200, 150, 100
+   <Box
+      style={{
+         width: "100%",
+         height: `${200 - index * 50}px`,
+      }}
+   />
+);

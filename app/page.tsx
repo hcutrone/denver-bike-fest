@@ -2,7 +2,7 @@
 
 import { Flex, VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
-import { ContactUs, General, Partners } from "@/components";
+import { ContactUs, General, Partners, Sponsors } from "@/components";
 import { HighlightedText } from "./layout";
 
 export default async function Home() {
@@ -11,7 +11,7 @@ export default async function Home() {
          <LandingImage />
          <General />
          <Partners />
-         {/* <Sponsors /> */}
+         <Sponsors />
          <ContactUs />
       </>
    );

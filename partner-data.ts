@@ -4,43 +4,35 @@ const communityGroups = [
       logo: "/partners/bike-and-brew.png",
    },
    {
-      name: "Bike and Brew Denver",
-      logo: "/partners/bike-and-brew.png",
+      name: "Chains of Strength",
+      logo: "/partners/chains.png",
    },
    {
-      name: "Bike and Brew Denver",
-      logo: "/partners/bike-and-brew.png",
-   },
-   {
-      name: "Bike and Brew Denver",
-      logo: "/partners/bike-and-brew.png",
-   },
-   {
-      name: "All Bodies on Bikes",
-      logo: "/partners/all-bodies-on-bikes.png",
+      name: "Wash Park Crewzers",
+      logo: "/partners/crewzers.png",
    },
 ];
 
 const nonProfits = [
    {
       name: "All Bodies on Bikes",
-      logo: "/partners/all-bodies-on-bikes.png",
+      logo: "/partners/abob.png",
    },
    {
-      name: "All Bodies on Bikes",
-      logo: "/partners/all-bodies-on-bikes.png",
+      name: "Bike Law",
+      logo: "/partners/bike-law.png",
    },
    {
-      name: "All Bodies on Bikes",
-      logo: "/partners/all-bodies-on-bikes.png",
+      name: "Colorado History Rides",
+      logo: "/partners/colorado-history-rides.png",
    },
    {
-      name: "All Bodies on Bikes",
-      logo: "/partners/all-bodies-on-bikes.png",
+      name: "Mayor's Bicycling Advisory Committee",
+      logo: "/partners/mayors-committee.png",
    },
    {
-      name: "All Bodies on Bikes",
-      logo: "/partners/all-bodies-on-bikes.png",
+      name: "Sun Valley Youth Center",
+      logo: "/partners/sun-valley-youth-center.webp",
    },
 ];
 
@@ -50,20 +42,20 @@ const localBusinesses = [
       logo: "/partners/campus-cycles.png",
    },
    {
-      name: "Campus Cycles",
-      logo: "/partners/campus-cycles.png",
+      name: "Ben's Cycles",
+      logo: "/partners/ben-cycles.png",
    },
    {
-      name: "Campus Cycles",
-      logo: "/partners/campus-cycles.png",
+      name: "Kidical Mass Denver",
+      logo: "/partners/kidical-mass.webp",
    },
    {
-      name: "Campus Cycles",
-      logo: "/partners/campus-cycles.png",
+      name: "Hardt Family Cyclery",
+      logo: "/partners/hardt.png",
    },
    {
-      name: "Campus Cycles",
-      logo: "/partners/campus-cycles.png",
+      name: "Z Cycle Shop",
+      logo: "/partners/zcycle.png",
    },
 ];
 

@@ -48,18 +48,29 @@ export function CollapsiblePartnerGrid({
                   )}
                </Flex>
             </Collapsible.Trigger>
-            <Collapsible.Content style={{ padding: "16px" }}>
-               <Grid
-                  columns={{ initial: "2", sm: "4", md: "5", lg: "6" }}
-                  gap="16px"
+            <Collapsible.Content>
+               <Flex
+                  p={{ initial: "8px", sm: "12px", md: "16px" }}
+                  justify={{ initial: "center", sm: "start" }}
                >
-                  {partner.groups.map((group, index) => (
-                     <PartnerCard
-                        key={group.name + index.toString()}
-                        group={group}
-                     />
-                  ))}
-               </Grid>
+                  <Grid
+                     columns={{
+                        initial: "1",
+                        xs: "2",
+                        sm: "3",
+                        md: "4",
+                        lg: "5",
+                     }}
+                     gap="16px"
+                  >
+                     {partner.groups.map((group, index) => (
+                        <PartnerCard
+                           key={group.name + index.toString()}
+                           group={group}
+                        />
+                     ))}
+                  </Grid>
+               </Flex>
             </Collapsible.Content>
          </Flex>
       </Collapsible.Root>

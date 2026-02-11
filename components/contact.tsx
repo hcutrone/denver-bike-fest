@@ -10,19 +10,28 @@ import {
    TextField,
 } from "@radix-ui/themes";
 import { Label } from "radix-ui";
+import { useState } from "react";
+import { EMAILJS_TEMPLATE_ID } from "@/env";
 import { EmailForm } from "./email-form";
 
-function validForm(form: HTMLFormElement) {
+function formToTemplateParams(
+   form: HTMLFormElement,
+): Record<string, string | undefined> {
    const name = form.querySelector<HTMLInputElement>("#name")?.value.trim();
    const email = form.querySelector<HTMLInputElement>("#email")?.value.trim();
    const message = form
       .querySelector<HTMLTextAreaElement>("#message")
       ?.value.trim();
+   return { name, email, message };
+}
 
+function validForm(form: HTMLFormElement) {
+   const { name, email, message } = formToTemplateParams(form);
    return !!name && !!email && !!message;
 }
 
 export function ContactUs() {
+   const [loading, setLoading] = useState(false);
    return (
       <Flex
          p={{ initial: "24px", sm: "32px" }}
@@ -52,8 +61,11 @@ export function ContactUs() {
          </Text>
 
          <EmailForm
-            template={process.env.NEXT_PUBLIC_CONTACT_EMAILJS_TEMPLATE_ID!}
+            id="contact-form"
+            template={EMAILJS_TEMPLATE_ID!}
             validate={validForm}
+            formToTemplateParams={formToTemplateParams}
+            setLoading={setLoading}
          >
             <Flex gap="8px" direction="column" maxWidth={"400px"} m="auto">
                <Box>
@@ -92,6 +104,7 @@ export function ContactUs() {
                <Button
                   type="submit"
                   radius="full"
+                  loading={loading}
                   style={{
                      width: "fit-content",
                      padding: "18px",

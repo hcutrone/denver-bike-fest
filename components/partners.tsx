@@ -31,7 +31,7 @@ export function Partners() {
                   height={{ initial: "25px", xs: "30px", sm: "50px" }}
                   width={{ initial: "150px", xs: "180px", sm: "300px" }}
                   minWidth={"150px"}
-                  mt={{ initial: "10px", sm: "12px" }}
+                  mt="8px"
                   position="relative"
                >
                   <Image

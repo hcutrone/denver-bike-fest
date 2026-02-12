@@ -209,6 +209,7 @@ export const HighlightedText = ({
       <Text
          size={{ initial: "6", xs: "7", md: "8" }}
          weight="bold"
+         align="center"
          style={{ color: "white" }}
       >
          {children}

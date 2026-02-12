@@ -107,6 +107,14 @@ export default async function RootLayout({
                t.parentNode.insertBefore(j,t);o.s=Date.now();o.v=5;o.h=w.location.href;o.l=[];
                for(i=0;i<8;i++)o[l[i]]=o(l[i]);w[n]=o}
                })(window,document,'script','FundraiseUp','AUAHPMKJ');
+
+               (function(){
+                  var observer = new MutationObserver(function(){
+                     var el = document.getElementById('XBWGTSDK');
+                     if(el) el.remove();
+                  });
+                  observer.observe(document.documentElement,{childList:true,subtree:true});
+               })();
             `}
          </Script>
          <body>
@@ -201,6 +209,7 @@ export const HighlightedText = ({
       <Text
          size={{ initial: "6", xs: "7", md: "8" }}
          weight="bold"
+         align="center"
          style={{ color: "white" }}
       >
          {children}

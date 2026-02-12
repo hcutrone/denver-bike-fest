@@ -109,14 +109,3 @@ body {
 .rt-Text {
    color: var(--light-background);
 }
-
-iframe#XBWGTSDK {
-   display: none !important;
-   visibility: hidden !important;
-   width: 0 !important;
-   height: 0 !important;
-   opacity: 0 !important;
-   pointer-events: none !important;
-   position: absolute !important;
-   overflow: hidden !important;
-}

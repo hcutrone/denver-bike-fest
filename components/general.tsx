@@ -50,7 +50,7 @@ export const General = () => (
          Denver's cycling community can be. Whether you ride every day or just love
          the vibe, you're invited to join in!`}
             </Text>
-            <Flex
+            {/* <Flex
                direction="column"
                width="fit-content"
                p={{ initial: "12px", sm: "16px", md: "24px" }}
@@ -86,7 +86,7 @@ export const General = () => (
                >
                   Cost: FREE!
                </Text>
-            </Flex>
+            </Flex> */}
          </Flex>
          <Heading
             as="h3"
@@ -188,13 +188,13 @@ export const General = () => (
             </Button>
          </Flex>
       </ContentContainer>
-      <Box
+      {/* <Box
          width="100%"
          height="20px"
          style={{ backgroundColor: "var(--yellow-accent)" }}
-      />
+      /> */}
       <ContentContainer>
-         <Heading
+         {/* <Heading
             as="h2"
             trim="end"
             size={{ initial: "6", sm: "7", md: "8" }}
@@ -277,7 +277,7 @@ export const General = () => (
                   </Flex>
                </Button>
             </Flex>
-         </Flex>
+         </Flex> */}
 
          <Box py={{ initial: "16px" }}>
             <Heading
@@ -353,6 +353,7 @@ const ContentContainer = ({ children }: { children: React.ReactNode }) => (
       direction={"column"}
       p={{ initial: "24px", sm: "32px" }}
       maxWidth="1280px"
+      width="100%"
       m="auto"
       gap={{ initial: "8px", sm: "16px", md: "32px" }}
    >

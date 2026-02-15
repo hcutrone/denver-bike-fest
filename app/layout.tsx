@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
-import { Flex, Text, Theme } from "@radix-ui/themes";
+import { Theme } from "@radix-ui/themes";
 import localFont from "next/font/local";
-import { headers } from "next/headers";
 import Script from "next/script";
 import { Footer, Header } from "@/components";
 
@@ -93,8 +92,6 @@ export default async function RootLayout({
 }: {
    children: React.ReactNode;
 }) {
-   const headerStore = await headers();
-   const showSite = headerStore.get("x-show-site") === "true";
    return (
       <html lang="en" className={poppins.className}>
          <Script id="fundraiseup" strategy="afterInteractive">

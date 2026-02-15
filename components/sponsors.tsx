@@ -81,6 +81,7 @@ export function Sponsors() {
             }}
          >
             <Heading
+               as="h2"
                size={{ initial: "7", xs: "8", sm: "9" }}
                style={{ color: "var(--light-background)" }}
             >

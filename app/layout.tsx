@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
-import { Flex, Text, Theme } from "@radix-ui/themes";
+import { Theme } from "@radix-ui/themes";
 import localFont from "next/font/local";
-import { headers } from "next/headers";
-import Image from "next/image";
 import Script from "next/script";
 import { Footer, Header } from "@/components";
 
@@ -94,8 +92,6 @@ export default async function RootLayout({
 }: {
    children: React.ReactNode;
 }) {
-   const headerStore = await headers();
-   const showSite = headerStore.get("x-show-site") === "true";
    return (
       <html lang="en" className={poppins.className}>
          <Script id="fundraiseup" strategy="afterInteractive">
@@ -129,90 +125,12 @@ export default async function RootLayout({
                accentColor="lime"
             >
                <div style={{ backgroundColor: "var(--light-background)" }}>
-                  {showSite ? (
-                     <>
-                        <Header />
-                        <main>{children}</main>
-                        <Footer />
-                     </>
-                  ) : (
-                     <main>
-                        <ComingSoon />
-                     </main>
-                  )}
+                  <Header />
+                  <main>{children}</main>
+                  <Footer />
                </div>
             </Theme>
          </body>
       </html>
    );
 }
-
-function ComingSoon() {
-   return (
-      <Flex
-         style={{
-            height: "100vh",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "relative",
-         }}
-      >
-         <Image
-            src="/landing.jpeg"
-            alt="Landing"
-            fill
-            style={{ objectFit: "cover", opacity: 0.5 }}
-         />
-         <Flex
-            width="100%"
-            px="16px"
-            gap="8px"
-            style={{
-               position: "absolute",
-               top: "50%",
-               left: "50%",
-               transform: "translate(-50%, -50%)",
-               fontSize: "48px",
-               fontWeight: "bold",
-               flexDirection: "column",
-               alignItems: "center",
-               textAlign: "center",
-            }}
-         >
-            <Image
-               src="/logo_vertical.png"
-               alt="Logo"
-               width={500}
-               height={500}
-            />
-            <HighlightedText>
-               2026 Date & Location announcement coming soon!
-            </HighlightedText>
-         </Flex>
-      </Flex>
-   );
-}
-
-export const HighlightedText = ({
-   children,
-}: {
-   children: React.ReactNode;
-}) => (
-   <Flex
-      px={{ initial: "16px", sm: "24px" }}
-      py={{ initial: "4px", sm: "12px" }}
-      style={{
-         backgroundColor: "var(--yellow-accent)",
-         borderRadius: "50px",
-      }}
-   >
-      <Text
-         size={{ initial: "6", xs: "7", md: "8" }}
-         weight="bold"
-         align="center"
-         style={{ color: "white" }}
-      >
-         {children}
-      </Text>
-   </Flex>
-);

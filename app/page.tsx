@@ -1,9 +1,8 @@
 "use server";
 
-import { Flex, VisuallyHidden } from "@radix-ui/themes";
+import { Flex, Text, VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
 import { ContactUs, General, Partners, Sponsors } from "@/components";
-import { HighlightedText } from "./layout";
 
 export default async function Home() {
    return (
@@ -71,12 +70,29 @@ function LandingImage() {
                <HighlightedText>
                   Bikes, Community, and Connection!
                </HighlightedText>
-               <HighlightedText>
-                  June 13, 2026 | 3:00 pm - 8:00 pm
-               </HighlightedText>
-               <HighlightedText>York Street Yards</HighlightedText>
+               <HighlightedText>Date and location coming soon</HighlightedText>
             </Flex>
          </Flex>
       </Flex>
    );
 }
+
+const HighlightedText = ({ children }: { children: React.ReactNode }) => (
+   <Flex
+      px={{ initial: "16px", sm: "24px" }}
+      py={{ initial: "4px", sm: "12px" }}
+      style={{
+         backgroundColor: "var(--yellow-accent)",
+         borderRadius: "50px",
+      }}
+   >
+      <Text
+         size={{ initial: "6", xs: "7", md: "8" }}
+         weight="bold"
+         align="center"
+         style={{ color: "white" }}
+      >
+         {children}
+      </Text>
+   </Flex>
+);

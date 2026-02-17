@@ -149,7 +149,6 @@ const MobileHeader = () => (
             <DropdownMenu.Item>
                <Link
                   href="https://bikewalkbus.donorsupport.co/page/DenverBikeFest2026"
-                  target="_blank"
                   rel="noopener noreferrer"
                >
                   <Text

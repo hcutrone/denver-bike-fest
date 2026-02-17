@@ -4,7 +4,7 @@ import "./globals.css";
 import { Theme } from "@radix-ui/themes";
 import localFont from "next/font/local";
 import Script from "next/script";
-import { Footer, Header } from "@/components";
+import { DonateBanner, Footer, Header } from "@/components";
 
 const poppins = localFont({
    src: [
@@ -126,7 +126,10 @@ export default async function RootLayout({
             >
                <div style={{ backgroundColor: "var(--light-background)" }}>
                   <Header />
-                  <main>{children}</main>
+                  <main>
+                     {children}
+                     <DonateBanner />
+                  </main>
                   <Footer />
                </div>
             </Theme>

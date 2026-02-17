@@ -3,7 +3,6 @@ import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { Theme } from "@radix-ui/themes";
 import localFont from "next/font/local";
-import Script from "next/script";
 import { DonateBanner, Footer, Header } from "@/components";
 
 const poppins = localFont({

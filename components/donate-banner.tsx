@@ -16,7 +16,7 @@ export const DonateBanner = () => {
          bottom="0"
          left="50%"
          minWidth={{ initial: "90%", sm: "700px", md: "760px" }}
-         p="16px"
+         p="12px"
          mb="8px"
          align="center"
          justify="between"

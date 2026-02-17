@@ -117,7 +117,7 @@ export function Footer() {
             <Flex gap="8px" align="center" justify="center">
                <Link
                   href="https://www.instagram.com/denverbikefest"
-                  size="1"
+                  size="2"
                   underline="always"
                   style={{ color: "var(--light-background)" }}
                >
@@ -130,7 +130,7 @@ export function Footer() {
                />
                <Link
                   href="https://bikewalkbus.donorsupport.co/page/DenverBikeFest2026"
-                  size="1"
+                  size="2"
                   underline="always"
                   style={{ color: "var(--light-background)" }}
                >
@@ -143,13 +143,16 @@ export function Footer() {
                />
                <HoverCard.Root>
                   <HoverCard.Trigger>
-                     <Text size="1">Icon Credits</Text>
+                     <Text size="2">Icon Credits</Text>
                   </HoverCard.Trigger>
                   <HoverCard.Content>
                      <Icons />
                   </HoverCard.Content>
                </HoverCard.Root>
             </Flex>
+            <Text size="1" style={{ color: "var(--light-background)" }}>
+               Proudly made without the use of generative AI
+            </Text>
          </Flex>
       </footer>
    );

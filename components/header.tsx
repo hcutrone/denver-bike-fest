@@ -8,18 +8,11 @@ import {
    DropdownMenu,
    Flex,
    IconButton,
+   Link,
    Text,
 } from "@radix-ui/themes";
 import Image from "next/image";
 import { useState } from "react";
-
-declare global {
-   interface Window {
-      FundraiseUp: {
-         openCheckout: (campaignId: string, options?: object) => void;
-      };
-   }
-}
 
 export function Header() {
    return (
@@ -85,22 +78,29 @@ const DesktopHeader = () => (
 
 const DonateButton = () => (
    <Button
-      radius="full"
+      asChild
       style={{
          padding: "18px",
          cursor: "pointer",
          fontFamily: "var(--font-poppins)",
          backgroundColor: "var(--light-background)",
+         borderRadius: "12px",
       }}
-      onClick={() => window.FundraiseUp?.openCheckout("FUNNKVNBSJL")}
    >
-      <Text
-         size={{ initial: "3", sm: "6", md: "7" }}
-         style={{ color: "var(--dark-green)" }}
-         weight="bold"
+      <Link
+         href="https://bikewalkbus.donorsupport.co/page/DenverBikeFest2026"
+         target="_blank"
+         rel="noopener noreferrer"
+         underline="none"
       >
-         Donate
-      </Text>
+         <Text
+            size={{ initial: "3", sm: "6", md: "7" }}
+            style={{ color: "var(--dark-green)" }}
+            weight="bold"
+         >
+            Donate
+         </Text>
+      </Link>
    </Button>
 );
 
@@ -147,17 +147,19 @@ const MobileHeader = () => (
                </DropdownMenu.Item>
             ))}
             <DropdownMenu.Item>
-               <Text
-                  size={{ initial: "4", xs: "5" }}
-                  style={{
-                     color: "var(--lime-10)",
-                  }}
-                  onClick={() =>
-                     window.FundraiseUp?.openCheckout("FUNNKVNBSJL")
-                  }
+               <Link
+                  href="https://bikewalkbus.donorsupport.co/page/DenverBikeFest2026"
+                  rel="noopener noreferrer"
                >
-                  Donate
-               </Text>
+                  <Text
+                     size={{ initial: "4", xs: "5" }}
+                     style={{
+                        color: "var(--lime-10)",
+                     }}
+                  >
+                     Donate
+                  </Text>
+               </Link>
             </DropdownMenu.Item>
          </DropdownMenu.Content>
       </DropdownMenu.Root>

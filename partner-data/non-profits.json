@@ -74,7 +74,7 @@
       "logo": "/partners/casr.jpg",
       "url": "https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Climate-Action-Sustainability-and-Resiliency",
       "instagram": "@denvercasr",
-      "ready": false
+      "ready": true
    },
    {
       "name": "Bicycle Colorado",
@@ -82,12 +82,6 @@
       "url": "https://bicyclecolorado.org/",
       "instagram": "@bicyclecolo",
       "ready": true
-   },
-   {
-      "name": "RTD Board of Directors",
-      "logo": "/partners/rtd.png",
-      "url": "https://www.rtd-denver.com/about-rtd/board-of-directors",
-      "ready": false
    },
    {
       "name": "Denver Park Rangers",

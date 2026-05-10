@@ -69,10 +69,10 @@
    },
    {
       "name": "Pedal Stoke",
-      "logo": "/partners/pedal-stoke.png",
+      "logo": "/partners/pedal-stoke.jpg",
       "url": "https://pedalstoke.com/",
       "instagram": "@pedal_stoke",
-      "ready": false
+      "ready": true
    },
    {
       "name": "The Ride Collective",
@@ -86,6 +86,13 @@
       "logo": "/partners/veo.png",
       "url": "https://www.veoride.com/",
       "instagram": "@veomobility",
+      "ready": true
+   },
+   {
+      "name": "BikeReg",
+      "logo": "/partners/bikereg.png",
+      "url": "http://bikereg.com/Events/",
+      "instagram": "@bikereg",
       "ready": true
    }
 ]

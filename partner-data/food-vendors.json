@@ -40,5 +40,12 @@
       "url": "https://cohesionbeer.com/",
       "instagram": "@cohesionbeer",
       "ready": true
+   },
+   {
+      "name": "Elemental Bakery",
+      "logo": "/partners/elemental.png",
+      "url": "https://elementalbakeryandcoffee.com/",
+      "instagram": "@elementaldenver",
+      "ready": false
    }
 ]

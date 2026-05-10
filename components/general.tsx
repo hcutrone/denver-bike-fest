@@ -11,7 +11,6 @@ import {
 import Image from "next/image";
 import { Accordion } from "radix-ui";
 import { Fragment } from "react";
-import { GOOGLE_MAPS_API_KEY } from "@/env";
 
 export const General = () => (
    <Flex id="general" direction="column">

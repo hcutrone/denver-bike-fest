@@ -182,14 +182,27 @@ export const General = () => (
             parking available.
          </Text>
          <Flex direction={{ initial: "column", xs: "row" }} gap="32px">
-            <iframe
-               title="Map to York Street Yards"
-               src={`https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=York+Street+Yards,Denver+CO`}
-               width="450"
-               height="380"
-               style={{ border: 0, maxWidth: "100%" }}
-               loading="lazy"
-            />
+            <Flex direction="column" gap="4px">
+               <iframe
+                  className="bikestreets"
+                  src="https://bikestreets.com/widget/co/denver/event/1116/"
+                  width="500"
+                  height="400"
+                  loading="lazy"
+                  title="Bike Streets: Denver Bike Fest on the Low-Stress Denver Bike Map"
+               />
+               <Text size="1" style={{ color: "var(--dark-green)" }}>
+                  Low-stress bike routes to{" "}
+                  <a
+                     target="_blank"
+                     href="https://bikestreets.com/co/denver/event/1116/"
+                     rel="noopener"
+                  >
+                     Denver Bike Fest
+                  </a>{" "}
+                  on the Denver Bike Map.
+               </Text>
+            </Flex>
             <Flex direction="column" align={{ initial: "center", xs: "start" }}>
                <Text
                   size={{ initial: "5", sm: "6", md: "7" }}
@@ -232,7 +245,7 @@ export const General = () => (
                      height="fit-content"
                   >
                      <Link
-                        href="https://maps.app.goo.gl/FqQBwv3KrG52Y43x7"
+                        href="https://bikestreets.com/widget/co/denver/event/1116/"
                         underline="none"
                         target="_blank"
                      >

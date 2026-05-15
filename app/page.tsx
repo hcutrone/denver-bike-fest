@@ -2,14 +2,7 @@
 
 import { Flex, Text, VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
-import {
-   ContactUs,
-   General,
-   Partners,
-   SponsorCTA,
-   Sponsors,
-   WhoWeAre,
-} from "@/components";
+import { ContactUs, General, Partners, Sponsors, WhoWeAre } from "@/components";
 
 export default async function Home() {
    return (
@@ -19,7 +12,7 @@ export default async function Home() {
          <Partners />
          <Sponsors />
          <WhoWeAre />
-         <SponsorCTA />
+         <div className="h-[30] bg-(--yellow-accent)" />
          <ContactUs />
       </>
    );

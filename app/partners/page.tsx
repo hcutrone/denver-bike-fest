@@ -2,6 +2,7 @@
 
 import { Em, Flex, Grid, Heading, Link, Strong, Text } from "@radix-ui/themes";
 import { CollapsiblePartnerGrid } from "@/components";
+import { usePartnerRegistrationOpen } from "../../hooks/usePartnerRegistrationOpen";
 import {
    foodAndMusic,
    partners,
@@ -9,6 +10,7 @@ import {
 } from "../../partner-data/partner-data";
 
 export default function PartnersPage() {
+   const { isPartnerRegistrationOpen } = usePartnerRegistrationOpen();
    return (
       <Flex
          maxWidth="1280px"
@@ -28,30 +30,39 @@ export default function PartnersPage() {
          >
             Denver Bike Fest Partners
          </Heading>
-         <Flex direction="column" gap="8px" justify="center" align="center">
-            <Heading
-               as="h2"
-               size={{ initial: "5", sm: "6", md: "7" }}
-               style={{ color: "black", textAlign: "center" }}
-            >
-               <Strong>
-                  {
-                     "Partner registration is open from March 15th to May 15th, 2026!"
-                  }
-               </Strong>
-            </Heading>
-            <RegisterButton />
-            <Text
-               style={{ color: "black", textAlign: "center" }}
-               size={{ initial: "3", sm: "5", md: "6" }}
-            >
-               {`By registering as a partner, you'll get the chance to showcase your
+         {isPartnerRegistrationOpen && (
+            <>
+               <Flex
+                  direction="column"
+                  gap="8px"
+                  justify="center"
+                  align="center"
+               >
+                  <Heading
+                     as="h2"
+                     size={{ initial: "5", sm: "6", md: "7" }}
+                     style={{ color: "black", textAlign: "center" }}
+                  >
+                     <Strong>
+                        {
+                           "Partner registration is open from March 15th to May 15th, 2026!"
+                        }
+                     </Strong>
+                  </Heading>
+                  <RegisterButton />
+                  <Text
+                     style={{ color: "black", textAlign: "center" }}
+                     size={{ initial: "3", sm: "5", md: "6" }}
+                  >
+                     {`By registering as a partner, you'll get the chance to showcase your
             work or mission, connect with local residents, and be part of the
             city's biggest bike celebration.`}
-            </Text>
-         </Flex>
-         <PartnerTiers />
-         <FoodVendorInfo />
+                  </Text>
+               </Flex>
+               <PartnerTiers />
+               <FoodVendorInfo />
+            </>
+         )}
          <Flex justify="center">
             <Heading
                as="h2"

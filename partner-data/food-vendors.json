@@ -51,6 +51,6 @@
    {
       "name": "Patsy's",
       "logo": "/logo_vertical.png",
-      "ready": true
+      "ready": false
    }
 ]

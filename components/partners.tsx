@@ -154,7 +154,7 @@ export function Partners() {
                                  group.url ??
                                  (group.instagram
                                     ? `https://www.instagram.com/${group.instagram.substring(1)}`
-                                    : "#")
+                                    : undefined)
                               }
                               highlightClass={"hover-highlight-green-orange"}
                               imageSizing={{
@@ -192,7 +192,7 @@ export const PartnerCard = ({
    imageSizing,
 }: {
    name: string;
-   url: string;
+   url?: string;
    logo: string;
    highlightClass: string;
    imageSizing: string | Responsive<string>;

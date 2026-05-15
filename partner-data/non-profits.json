@@ -123,5 +123,12 @@
       "url": "https://www.rtd-denver.com/",
       "instagram": "@ridertd",
       "ready": true
+   },
+   {
+      "name": "Black Girls Do Bike - Denver",
+      "logo": "/partners/black-girls-do-bike.avif",
+      "url": "https://www.facebook.com/groups/blackgirlsdobikeDENVER/",
+      "instagram": "@bgdbdenver",
+      "ready": true
    }
 ]

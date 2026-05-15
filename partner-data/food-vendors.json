@@ -47,5 +47,10 @@
       "url": "https://elementalbakeryandcoffee.com/",
       "instagram": "@elementaldenver",
       "ready": false
+   },
+   {
+      "name": "Patsy's",
+      "logo": "/logo_vertical.png",
+      "ready": true
    }
 ]

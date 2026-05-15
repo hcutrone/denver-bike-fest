@@ -65,14 +65,14 @@
    },
    {
       "name": "SCORCHERS B/C",
-      "logo": "/partners/scorchers.png",
+      "logo": "/logo_vertical.png",
       "ready": false
    },
    {
-      "name": "Black Girls Do Bike - Denver",
-      "logo": "/partners/black-girls-do-bike.avif",
-      "url": "https://www.facebook.com/groups/blackgirlsdobikeDENVER/",
-      "instagram": "@bgdbdenver",
+      "name": "Denver Bike Gang",
+      "logo": "/partners/denver-bike-gang.png",
+      "instagram": "@denverbikegang",
+      "url": "https://denverbikegang.com",
       "ready": true
    }
 ]

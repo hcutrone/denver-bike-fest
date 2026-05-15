@@ -81,7 +81,7 @@ export function CollapsiblePartnerGrid({
                               group.url ??
                               (group.instagram
                                  ? `https://www.instagram.com/${group.instagram.substring(1)}`
-                                 : "#")
+                                 : undefined)
                            }
                            highlightClass={
                               variant === "yellow"

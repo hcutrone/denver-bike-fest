@@ -390,8 +390,8 @@ const faqs = [
       question: "What should I bring to the fest?",
       answer: [
          "Reusable water bottle for water stations",
-         "Sunscreen/Hat/Sunscreen/Umbrella for that Colorado sun!",
-         "Camp chair, blanket, or towel to launge in the Yard",
+         "Sunscreen/Hat/Umbrella for that Colorado sun!",
+         "Camp chair, blanket, or towel to lounge in the Yard",
          "Camera (Non-pro digital and film, no flashes)",
          "ID for adult beverages from Cohesion Brewing",
          "Money for food, beverages, merch, and more!",

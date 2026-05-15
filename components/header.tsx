@@ -177,6 +177,21 @@ const MobileHeader = () => (
             ))}
             <DropdownMenu.Item>
                <Link
+                  href="https://www.signupgenius.com/go/10C044AA8A92EA4F9CE9-63862642-volunteer"
+                  rel="noopener noreferrer"
+               >
+                  <Text
+                     size={{ initial: "4", xs: "5" }}
+                     style={{
+                        color: "var(--lime-10)",
+                     }}
+                  >
+                     Volunteer
+                  </Text>
+               </Link>
+            </DropdownMenu.Item>
+            <DropdownMenu.Item>
+               <Link
                   href="https://bikewalkbus.donorsupport.co/page/DenverBikeFest2026"
                   rel="noopener noreferrer"
                >

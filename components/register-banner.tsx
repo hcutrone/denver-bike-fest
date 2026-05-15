@@ -2,9 +2,11 @@
 
 import { Button, Flex, IconButton, Link, Strong, Text } from "@radix-ui/themes";
 import { useState } from "react";
+import { usePartnerRegistrationOpen } from "../hooks/usePartnerRegistrationOpen";
 
-export const RegisterBanner = () => {
+export const BottomBanner = () => {
    const [isVisible, setIsVisible] = useState(true);
+   const { isPartnerRegistrationOpen } = usePartnerRegistrationOpen();
    if (!isVisible) {
       return null;
    }
@@ -44,6 +46,14 @@ export const RegisterBanner = () => {
          >
             &times;
          </IconButton>
+         {isPartnerRegistrationOpen ? <RegisterBanner /> : <VolunteerBanner />}
+      </Flex>
+   );
+};
+
+const RegisterBanner = () => {
+   return (
+      <>
          <Flex direction="column">
             <Text
                size={{ initial: "3", sm: "4", md: "5" }}
@@ -82,6 +92,51 @@ export const RegisterBanner = () => {
                </Text>
             </Link>
          </Button>
-      </Flex>
+      </>
+   );
+};
+
+const VolunteerBanner = () => {
+   return (
+      <>
+         <Flex direction="column">
+            <Text
+               size={{ initial: "3", sm: "4", md: "5" }}
+               style={{ color: "var(--dark-green)" }}
+            >
+               <Strong>Sign up to volunteer!</Strong>
+            </Text>
+            <Text
+               size={{ initial: "1", sm: "2", md: "3" }}
+               style={{ color: "var(--dark-green)" }}
+            >
+               Bike valet, setup/teardown, merch sales, and more
+            </Text>
+         </Flex>
+         <Button
+            asChild
+            style={{
+               padding: "12px 14px",
+               cursor: "pointer",
+               fontFamily: "var(--font-poppins)",
+               backgroundColor: "var(--dark-green)",
+               borderRadius: "12px",
+            }}
+         >
+            <Link
+               href="https://www.signupgenius.com/go/10C044AA8A92EA4F9CE9-63862642-volunteer"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
+               <Text
+                  size={{ initial: "3", sm: "4", md: "5" }}
+                  style={{ color: "var(--light-background)" }}
+                  weight="bold"
+               >
+                  Volunteer
+               </Text>
+            </Link>
+         </Button>
+      </>
    );
 };

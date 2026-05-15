@@ -9,9 +9,11 @@ import {
 } from "@radix-ui/themes";
 import type { Responsive } from "@radix-ui/themes/props";
 import Image from "next/image";
+import { usePartnerRegistrationOpen } from "../hooks/usePartnerRegistrationOpen";
 import { allPartners as partners } from "../partner-data/partner-data";
 
 export function Partners() {
+   const { isPartnerRegistrationOpen } = usePartnerRegistrationOpen();
    return (
       <Flex
          id="partners"
@@ -59,49 +61,11 @@ export function Partners() {
                   Partners
                </Heading>
             </Flex>
-            <Text size={{ initial: "3", sm: "5", md: "6" }}>
-               {`Denver Bike Fest is built by the community, for the community.
-               Whether you want to volunteer, sponsor, perform, or just lend a
-               hand spreading the word, there's a place for you here.`}
-            </Text>
-            <Text size={{ initial: "3", sm: "5", md: "6" }}>
-               {`By registering as a partner, you'll get the chance to showcase
-               your work or mission, connect with local residents, and be part of
-               the city's biggest bike celebration. Partner registration is open
-               from `}
-               <Strong>March 15th to May 15th, 2026!</Strong>
-            </Text>
-            <Button
-               asChild
-               radius="full"
-               style={{
-                  marginInline: "auto",
-                  fontFamily: "var(--font-poppins)",
-                  backgroundColor: "#d8af53",
-                  cursor: "pointer",
-               }}
-            >
-               <Flex
-                  asChild
-                  p={{ initial: "16px", sm: "20px", md: "24px" }}
-                  width="fit-content"
-               >
-                  <Link
-                     href="https://www.eventbrite.com/e/denver-bike-fest-2026-partner-registration-registration-1984436547132?aff=oddtdtcreator"
-                     underline="none"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                  >
-                     <Text
-                        size={{ initial: "5", sm: "7", md: "8" }}
-                        style={{ color: "white" }}
-                        weight="bold"
-                     >
-                        Register Here!
-                     </Text>
-                  </Link>
-               </Flex>
-            </Button>
+            {isPartnerRegistrationOpen ? (
+               <PartnerRegistrationOpen />
+            ) : (
+               <PartnerRegistrationClosed />
+            )}
             <Flex gap={{ initial: "16px", sm: "32px" }} direction="column">
                {partners.map((partner) => (
                   <Flex
@@ -154,7 +118,7 @@ export function Partners() {
                                  group.url ??
                                  (group.instagram
                                     ? `https://www.instagram.com/${group.instagram.substring(1)}`
-                                    : "#")
+                                    : undefined)
                               }
                               highlightClass={"hover-highlight-green-orange"}
                               imageSizing={{
@@ -192,7 +156,7 @@ export const PartnerCard = ({
    imageSizing,
 }: {
    name: string;
-   url: string;
+   url?: string;
    logo: string;
    highlightClass: string;
    imageSizing: string | Responsive<string>;
@@ -227,3 +191,57 @@ export const PartnerCard = ({
       </Flex>
    );
 };
+
+const PartnerRegistrationOpen = () => (
+   <>
+      <Text size={{ initial: "3", sm: "5", md: "6" }}>
+         {`Denver Bike Fest is built by the community, for the community.
+               Whether you want to volunteer, sponsor, perform, or just lend a
+               hand spreading the word, there's a place for you here.`}
+      </Text>
+      <Text size={{ initial: "3", sm: "5", md: "6" }}>
+         {`By registering as a partner, you'll get the chance to showcase
+               your work or mission, connect with local residents, and be part of
+               the city's biggest bike celebration. Partner registration is open
+               from `}
+         <Strong>March 15th to May 15th, 2026!</Strong>
+      </Text>
+      <Button
+         asChild
+         radius="full"
+         style={{
+            marginInline: "auto",
+            fontFamily: "var(--font-poppins)",
+            backgroundColor: "#d8af53",
+            cursor: "pointer",
+         }}
+      >
+         <Flex
+            asChild
+            p={{ initial: "16px", sm: "20px", md: "24px" }}
+            width="fit-content"
+         >
+            <Link
+               href="https://www.eventbrite.com/e/denver-bike-fest-2026-partner-registration-registration-1984436547132?aff=oddtdtcreator"
+               underline="none"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
+               <Text
+                  size={{ initial: "5", sm: "7", md: "8" }}
+                  style={{ color: "white" }}
+                  weight="bold"
+               >
+                  Register Here!
+               </Text>
+            </Link>
+         </Flex>
+      </Button>
+   </>
+);
+
+const PartnerRegistrationClosed = () => (
+   <Text size={{ initial: "3", sm: "5", md: "6" }}>
+      {`Partner registration for 2026 is closed! Join us on June 13th to see these wonderful partners:`}
+   </Text>
+);

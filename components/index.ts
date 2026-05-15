@@ -7,6 +7,5 @@ export * from "./general";
 export * from "./header";
 export * from "./partners";
 export * from "./register-banner";
-export * from "./sponsor-cta";
 export * from "./sponsors";
 export * from "./who";

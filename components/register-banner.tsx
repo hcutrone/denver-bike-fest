@@ -2,11 +2,9 @@
 
 import { Button, Flex, IconButton, Link, Strong, Text } from "@radix-ui/themes";
 import { useState } from "react";
-import { usePartnerRegistrationOpen } from "../hooks/usePartnerRegistrationOpen";
 
 export const BottomBanner = () => {
    const [isVisible, setIsVisible] = useState(true);
-   const { isPartnerRegistrationOpen } = usePartnerRegistrationOpen();
    if (!isVisible) {
       return null;
    }
@@ -46,53 +44,8 @@ export const BottomBanner = () => {
          >
             &times;
          </IconButton>
-         {isPartnerRegistrationOpen ? <RegisterBanner /> : <VolunteerBanner />}
+         <VolunteerBanner />
       </Flex>
-   );
-};
-
-const RegisterBanner = () => {
-   return (
-      <>
-         <Flex direction="column">
-            <Text
-               size={{ initial: "3", sm: "4", md: "5" }}
-               style={{ color: "var(--dark-green)" }}
-            >
-               <Strong>Register to be a 2026 Partner today!</Strong>
-            </Text>
-            <Text
-               size={{ initial: "1", sm: "2", md: "3" }}
-               style={{ color: "var(--dark-green)" }}
-            >
-               Registration is open until May 15th, 2026
-            </Text>
-         </Flex>
-         <Button
-            asChild
-            style={{
-               padding: "12px 14px",
-               cursor: "pointer",
-               fontFamily: "var(--font-poppins)",
-               backgroundColor: "var(--dark-green)",
-               borderRadius: "12px",
-            }}
-         >
-            <Link
-               href="https://www.eventbrite.com/e/denver-bike-fest-2026-partner-registration-registration-1984436547132?aff=oddtdtcreator"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-               <Text
-                  size={{ initial: "3", sm: "4", md: "5" }}
-                  style={{ color: "var(--light-background)" }}
-                  weight="bold"
-               >
-                  Register
-               </Text>
-            </Link>
-         </Button>
-      </>
    );
 };
 

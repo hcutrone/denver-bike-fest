@@ -180,6 +180,26 @@ export const General = () => (
             mile from multiple Light Rail stops. The Yards also has ample public
             parking available.
          </Text>
+         <Flex direction="column" gap="3">
+            <Heading
+               as="h3"
+               trim="end"
+               size={{ initial: "5", sm: "6", md: "7" }}
+               mb="0"
+               style={{ color: "var(--dark-green)" }}
+            >
+               FREE Bike Valet
+            </Heading>
+            <Text
+               size={{ initial: "3", sm: "5", md: "6" }}
+               style={{ color: "var(--dark-green)" }}
+            >
+               Our awesome sponsor, Z Cycle Shop, will be providing free bike
+               parking at the south side entrance from Schafer Park from 3:00 pm
+               to 8:30 pm. Volunteers will swap your bike for a claim ticket and
+               keep your bike safe from theft or damage.
+            </Text>
+         </Flex>
          <Flex direction={{ initial: "column", xs: "row" }} gap="32px">
             <Flex direction="column" gap="4px">
                <iframe

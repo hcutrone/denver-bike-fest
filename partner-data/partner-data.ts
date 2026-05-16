@@ -4,19 +4,21 @@ import foodVendorsRaw from "./food-vendors.json";
 import localBusinessesRaw from "./local-businesses.json";
 import nonProfitsRaw from "./non-profits.json";
 
-const communityGroups: PartnerType[] = communityGroupsRaw.filter(
-   (group) => group.ready,
-);
+const communityGroups: PartnerType[] = communityGroupsRaw
+   .filter((group) => group.ready)
+   .sort((g1, g2) => g1.name.localeCompare(g2.name));
 const foodVendors: PartnerType[] = foodVendorsRaw.filter(
    (vendor) => vendor.ready,
 );
-const localBusinesses: PartnerType[] = localBusinessesRaw.filter(
-   (business) => business.ready,
-);
-const nonProfits: PartnerType[] = nonProfitsRaw.filter((org) => org.ready);
-const entertainment: PartnerType[] = entertainmentRaw.filter(
-   (ent) => ent.ready,
-);
+const localBusinesses: PartnerType[] = localBusinessesRaw
+   .filter((business) => business.ready)
+   .sort((g1, g2) => g1.name.localeCompare(g2.name));
+const nonProfits: PartnerType[] = nonProfitsRaw
+   .filter((org) => org.ready)
+   .sort((g1, g2) => g1.name.localeCompare(g2.name));
+const entertainment: PartnerType[] = entertainmentRaw
+   .filter((ent) => ent.ready)
+   .sort((g1, g2) => g1.name.localeCompare(g2.name));
 
 export const partners = [
    { header: "Community Groups", groups: communityGroups, id: "community" },

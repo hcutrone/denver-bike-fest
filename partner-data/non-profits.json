@@ -90,7 +90,7 @@
       "ready": true
    },
    {
-      "name": "Americas for Conservation and the Arts",
+      "name": "Bici Libre",
       "logo": "/partners/afca.png",
       "url": "https://americasforconservation.com/",
       "instagram": "@afcanatura",
@@ -129,6 +129,30 @@
       "logo": "/partners/black-girls-do-bike.avif",
       "url": "https://www.facebook.com/groups/blackgirlsdobikeDENVER/",
       "instagram": "@bgdbdenver",
+      "ready": true
+   },
+   {
+      "name": "Children's Hospital Colorado Foundation",
+      "logo": "/partners/childrens-hospital.png",
+      "instagram": "@givechildrensco",
+      "ready": true
+   },
+   {
+      "name": "Colorado Rising for Communities",
+      "logo": "/partners/colorado-rising.png",
+      "instagram": "@coloradorising",
+      "ready": true
+   },
+   {
+      "name": "CDOT",
+      "logo": "/partners/cdot.png",
+      "instagram": "@coloradodot",
+      "ready": true
+   },
+   {
+      "name": "All Bodies on Bikes - Denver",
+      "logo": "/partners/abob.webp",
+      "instagram": "@abob_denver",
       "ready": true
    }
 ]

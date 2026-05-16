@@ -94,5 +94,23 @@
       "url": "http://bikereg.com/Events/",
       "instagram": "@bikereg",
       "ready": true
+   },
+   {
+      "name": "BikaBahn",
+      "logo": "/partners/bikabahn.png",
+      "instagram": "@bikabahn",
+      "ready": true
+   },
+   {
+      "name": "Denver Sports Massage",
+      "logo": "/partners/denver-sports-massage.png",
+      "instagram": "@denversportsmassage",
+      "ready": true
+   },
+   {
+      "name": "Kryptonite Locks",
+      "logo": "/partners/kryptonite.jpeg",
+      "instagram": "@kryptonitelocks",
+      "ready": true
    }
 ]

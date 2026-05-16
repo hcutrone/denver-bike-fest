@@ -65,8 +65,8 @@
    },
    {
       "name": "SCORCHERS B/C",
-      "logo": "/logo_vertical.png",
-      "ready": false
+      "logo": "/partners/scorchers.png",
+      "ready": true
    },
    {
       "name": "Denver Bike Gang",

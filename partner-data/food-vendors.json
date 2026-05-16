@@ -42,15 +42,22 @@
       "ready": true
    },
    {
-      "name": "Elemental Bakery",
+      "name": "Elemental Bakery and Coffeehouse",
       "logo": "/partners/elemental.png",
       "url": "https://elementalbakeryandcoffee.com/",
-      "instagram": "@elementaldenver",
-      "ready": false
+      "instagram": "@elementalbandc",
+      "ready": true
    },
    {
       "name": "Patsy's",
-      "logo": "/logo_vertical.png",
-      "ready": false
+      "logo": "/partners/patsys.jpg",
+      "instagram": "@patsysoysters",
+      "ready": true
+   },
+   {
+      "name": "The Pretzelry",
+      "logo": "/partners/pretzelry.png",
+      "instagram": "@the_pretzelry",
+      "ready": true
    }
 ]

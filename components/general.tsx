@@ -201,11 +201,14 @@ export const General = () => (
             </Text>
          </Flex>
          <Flex direction={{ initial: "column", xs: "row" }} gap="32px">
-            <Flex direction="column" gap="4px">
+            <Flex
+               direction="column"
+               gap="4px"
+               minWidth={{ initial: "auto", sm: "500px" }}
+            >
                <iframe
                   className="bikestreets"
                   src="https://bikestreets.com/widget/co/denver/event/1116/"
-                  width="500"
                   height="400"
                   loading="lazy"
                   title="Bike Streets: Denver Bike Fest on the Low-Stress Denver Bike Map"

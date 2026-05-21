@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { Theme } from "@radix-ui/themes";
+import { Analytics } from "@vercel/analytics/next";
 import localFont from "next/font/local";
 import Script from "next/script";
 import type { Event, WithContext } from "schema-dts";
@@ -168,6 +169,7 @@ export default async function RootLayout({
                   <Footer />
                </div>
             </Theme>
+            <Analytics />
          </body>
       </html>
    );

@@ -154,5 +154,12 @@
       "logo": "/partners/abob.webp",
       "instagram": "@abob_denver",
       "ready": true
+   },
+   {
+      "name": "Lucky Bikes",
+      "logo": "/partners/lucky-bikes.png",
+      "instagram": "@luckybikesrecyclery",
+      "url": "https://luckybikes.org/",
+      "ready": true
    }
 ]

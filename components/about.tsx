@@ -2,12 +2,7 @@ import { Flex, Text } from "@radix-ui/themes";
 import Image from "next/image";
 
 export const About = () => (
-   <Flex
-      style={{
-         backgroundColor: "var(--lime-9)",
-      }}
-      id="about"
-   >
+   <div className="flex bg-(--lime-9)" id="about">
       <Flex
          direction="column"
          p={{ initial: "24px", sm: "32px" }}
@@ -67,5 +62,5 @@ export const About = () => (
             </Flex>
          </Flex>
       </Flex>
-   </Flex>
+   </div>
 );

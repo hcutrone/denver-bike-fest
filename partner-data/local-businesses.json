@@ -112,5 +112,12 @@
       "logo": "/partners/kryptonite.jpeg",
       "instagram": "@kryptonitelocks",
       "ready": true
+   },
+   {
+      "name": "Maxilla_MFG",
+      "logo": "/partners/maxilla.png",
+      "instagram": "",
+      "url": "",
+      "ready": false
    }
 ]

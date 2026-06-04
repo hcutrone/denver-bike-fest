@@ -7,9 +7,9 @@ import nonProfitsRaw from "./non-profits.json";
 const communityGroups: PartnerType[] = communityGroupsRaw
    .filter((group) => group.ready)
    .sort((g1, g2) => g1.name.localeCompare(g2.name));
-const foodVendors: PartnerType[] = foodVendorsRaw.filter(
-   (vendor) => vendor.ready,
-);
+const foodVendors: PartnerType[] = foodVendorsRaw
+   .filter((vendor) => vendor.ready)
+   .sort((g1, g2) => g1.name.localeCompare(g2.name));
 const localBusinesses: PartnerType[] = localBusinessesRaw
    .filter((business) => business.ready)
    .sort((g1, g2) => g1.name.localeCompare(g2.name));

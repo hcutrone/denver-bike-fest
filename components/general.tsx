@@ -171,7 +171,10 @@ export const General = () => (
          >
             Event Map
          </Heading>
-         <Text style={{ color: "var(--dark-green)" }}>
+         <Text
+            size={{ initial: "3", sm: "5", md: "6" }}
+            style={{ color: "var(--dark-green)" }}
+         >
             {`Don't miss out on any of the fun across The Yard!`}
          </Text>
          <Flex direction={"row"} justify="center">

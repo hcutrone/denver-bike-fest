@@ -169,6 +169,36 @@ export const General = () => (
             size={{ initial: "6", sm: "7", md: "8" }}
             style={{ color: "var(--dark-green)" }}
          >
+            Event Map
+         </Heading>
+         <Text style={{ color: "var(--dark-green)" }}>
+            {`Don't miss out on any of the fun across The Yard!`}
+         </Text>
+         <Flex direction={"row"} justify="center">
+            <Image
+               alt="Festival Map"
+               src="/festival-map-ig.jpg"
+               width={600}
+               height={50}
+               style={{
+                  border: "3px solid var(--dark-green)",
+                  borderRadius: "12px",
+               }}
+            />
+         </Flex>
+      </ContentContainer>
+      <Box
+         width="100%"
+         height="20px"
+         style={{ backgroundColor: "var(--yellow-accent)" }}
+      />
+      <ContentContainer>
+         <Heading
+            as="h2"
+            trim="end"
+            size={{ initial: "6", sm: "7", md: "8" }}
+            style={{ color: "var(--dark-green)" }}
+         >
             Getting There
          </Heading>
          <Text

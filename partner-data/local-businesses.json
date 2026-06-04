@@ -112,5 +112,32 @@
       "logo": "/partners/kryptonite.jpeg",
       "instagram": "@kryptonitelocks",
       "ready": true
+   },
+   {
+      "name": "Epic Mountain Gear",
+      "logo": "/partners/epic.jpg",
+      "instagram": "@epicmountaingear",
+      "url": "https://www.epicmountaingear.com/",
+      "ready": true
+   },
+   {
+      "name": "Rad Power Bikes",
+      "logo": "/partners/rad.jpg",
+      "instagram": "@radpowerbikes",
+      "url": "https://https://www.radpowerbikes.com/",
+      "ready": true
+   },
+   {
+      "name": "Hardt Family Cyclery",
+      "logo": "/partners/hardt.png",
+      "instagram": "@hardt_family_cyclery",
+      "url": "https://www.hardtfamilycyclery.com/",
+      "ready": true
+   },
+   {
+      "name": "Maxilla MFG",
+      "logo": "/partners/maxilla.png",
+      "instagram": "@maxilla_art",
+      "ready": true
    }
 ]

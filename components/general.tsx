@@ -169,15 +169,20 @@ export const General = () => (
             size={{ initial: "6", sm: "7", md: "8" }}
             style={{ color: "var(--dark-green)" }}
          >
-            Event Map
+            Event Day
          </Heading>
          <Text
             size={{ initial: "3", sm: "5", md: "6" }}
             style={{ color: "var(--dark-green)" }}
          >
-            {`Don't miss out on any of the fun across The Yard!`}
+            {`Don't miss out on any of the fun across The Yard! Use our map and schedule to make sure you enjoy your day to the fullest.`}
          </Text>
-         <Flex direction={"row"} justify="center">
+         <Flex
+            direction={{ initial: "column", lg: "row" }}
+            justify="center"
+            align="center"
+            gap="5"
+         >
             <Image
                alt="Festival Map"
                src="/festival-map-ig.jpg"
@@ -186,6 +191,18 @@ export const General = () => (
                style={{
                   border: "3px solid var(--dark-green)",
                   borderRadius: "12px",
+               }}
+            />
+            <Image
+               alt="Schedule"
+               src="/schedule.jpg"
+               width={600}
+               height={50}
+               style={{
+                  border: "3px solid var(--dark-green)",
+                  borderRadius: "12px",
+                  padding: "8px",
+                  background: "white",
                }}
             />
          </Flex>
